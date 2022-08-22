@@ -64,7 +64,7 @@ export class RegisterComponent implements OnInit {
     this.authService.registerService(this.user).subscribe({
       next: () => {
         this.router.navigate(["auth/login"]);
-        this.toastrService.success('Check your INBOX / SPAM!', 'Confirm your account!');
+        this.toastrService.success('Go to your EMAIL!', 'Confirm your account!');
       },
       error: err => {
         if (err?.status === 409) {
