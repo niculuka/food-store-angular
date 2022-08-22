@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .display {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  
+  }
+
+  h1 {
+    margin-top: 40px;
+    font-size: 28px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;    
+  }
+  
+  .card {
+    width: 250px;
+    height: 320px;
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.363);
+    transition: 0.3s;
+    text-align: center;
+    border: 2px solid rgb(184, 184, 184);
+  }
+  
+  .card:hover {
+    box-shadow: 0 18px 26px 0 rgba(0, 0, 0, 0.564);
+    cursor: pointer;
+  }
+  
+  .product {
+    height: 126px;
+    line-height: 70px;
+    /* borderul asta e pt ca nu da click pe marginea scrisului */
+    border: 2px solid rgb(255, 255, 255);
+  } 
+  
+  
+  img {
+    width: 250px;
+  }
+  
+  

@@ -1,0 +1,24 @@
+.container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid red;
+}
+
+span {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color:rgb(0, 15, 184);
+  font-size: 20px;
+}

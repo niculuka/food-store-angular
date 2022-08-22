@@ -1,0 +1,66 @@
+<div class="container">
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" formControlName="username">
+      <div class="alert-danger" *ngIf="fc['username'].invalid && isSubmitted">Insert min 4, max 30 chars!</div>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      <div class="alert-danger" *ngIf="fc['password'].errors && isSubmitted">
+        <div *ngIf="fc['password'].errors['required']">Empty password!</div>
+        <div *ngIf="fc['password'].errors['minlength']">Insert minimum 4 character!</div>
+        <div *ngIf="fc['password'].errors['maxlength']">Insert maximum 30 character!</div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="name">
+      <div class="alert-danger" *ngIf="fc['name'].invalid && isSubmitted">Insert min 4, max 30 chars!</div>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+      <div class="alert-danger" *ngIf="fc['email'].errors && isSubmitted">
+        <div *ngIf="fc['email'].errors['required']">Empty email!</div>
+        <div *ngIf="fc['email'].errors['email']">Insert a valid email!</div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput type="text" formControlName="phone">
+      <div class="alert-danger" *ngIf="fc['phone'].errors && isSubmitted">
+        <div *ngIf="fc['phone'].errors['required']">Empty phone!</div>
+        <div *ngIf="fc['phone'].errors['pattern']">Insert only numbers!</div>
+        <div *ngIf="fc['phone'].errors['minlength']">Insert minimum 10 numbers!</div>
+        <div *ngIf="fc['phone'].errors['maxlength']">Insert maximum 13 character!</div>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <textarea matInput type="text" cols="30" rows="3" formControlName="address"></textarea>
+      <div class="alert-danger" *ngIf="fc['address'].errors && isSubmitted">
+        <div *ngIf="fc['address'].errors['required']">Empty address!</div>
+        <div *ngIf="fc['address'].errors['minlength']">Insert minimum 10 character!</div>
+        <div *ngIf="fc['address'].errors['maxlength']">Insert maximum 100 character!</div>
+      </div>
+    </mat-form-field>
+
+
+    <div class="alert" *ngIf="message">{{message}}</div>
+
+    <button mat-button type="submit">REGISTER</button>
+
+    <a routerLink="/auth/login">Login here!</a>
+
+  </form>
+
+</div>

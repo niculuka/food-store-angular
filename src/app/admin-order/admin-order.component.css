@@ -1,0 +1,120 @@
+.container {
+    margin: 10px 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    width: 100%;
+}
+
+.forms {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+table {
+    border: 2px solid rgb(186, 184, 184);
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    text-align: left;
+    word-wrap: break-word;
+    padding: 10px;
+    background: #eeeeee;
+    border: 1px solid rgb(180, 178, 178);
+}
+
+.items {
+    background: #ffffff;
+    border: 1px solid rgb(180, 178, 178);
+}
+
+tr:hover {
+    background-color: rgb(174, 174, 174);
+}
+
+.btn-status {
+    font-size: 16px;
+    margin: 2px;
+    font-weight: 600;
+    color: rgb(3, 183, 206);
+    ;
+    background: white;
+    cursor: pointer;
+    border: 2px solid rgb(182, 181, 181);
+}
+
+.btn-status:hover {
+    color: black;
+    background: rgb(1, 216, 244);
+}
+
+.btn-delete {
+    margin: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgb(247, 120, 120);
+    border: 2px solid grey;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    color: white;
+    background: rgb(250, 46, 46);
+}
+
+@media (min-width: 1301px) {
+    .column {
+        display: none;
+    }
+}
+
+@media (max-width: 1300px) {
+    .forms {
+        width: auto;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .row {
+        display: none;
+    }
+
+    .column {
+        max-width: 400px;
+    }
+
+    td,
+    th {
+        border: 1px solid grey;
+    }
+
+    tbody {
+        border: 1px solid grey;
+    }
+
+    .last {
+        height: 50px;
+    }
+
+}
+
+@media (max-width: 420px) {
+    .btn-status {
+        padding: 0 4px;
+    }
+
+    .btn-delete {
+        padding: 0 4px;
+    }
+}

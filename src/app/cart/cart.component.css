@@ -1,0 +1,187 @@
+.container {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.empty {
+  font-size: 22px;
+  color: red;
+  text-align: center;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+img:hover {
+  background: white;
+}
+
+select {
+  width: 50px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgb(137, 137, 137);
+  background: white;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.btn-remove {
+  border: 1px solid rgb(95, 95, 95);
+  font-size: 16px;
+  font-weight: 600;
+  color: #e72929;
+  opacity: 0.7;
+  outline: none;
+}
+
+.btn-remove:hover {
+  text-shadow: 1px 1px 2px;
+  box-shadow: 2px 1px 6px;
+  cursor: pointer;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 30px;
+}
+
+table {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 16px 0;
+}
+
+tr {
+  font-size: 18px;
+  text-align: left;
+  border-bottom: 1px solid grey;
+  /* table{border-collapse: collapse;} */
+}
+
+tr:hover {
+  background-color: rgb(224, 224, 224);
+}
+
+.checkout tr {
+  background-color: transparent;
+}
+
+td,
+th {
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
+.total td,
+.total th {
+  width: 200px;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
+.total {
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  background: rgb(236, 236, 236);
+}
+
+.index {
+  background: rgb(236, 236, 236);
+}
+
+.checkout a {
+  margin: 10px;
+  padding: 16px;
+  color: white;
+  background: #2ebc4b;
+  display: block;
+  width: 300px;
+  border-radius: 4px;
+  border: 2px solid grey;
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.checkout a:hover {
+  color: black;
+  background: #49e167;
+  cursor: pointer;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.radio input {
+  margin: 0px;
+}
+
+.radio label {
+  margin-left: 10px;
+}
+
+@media (min-width: 801px) {
+  .column {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .row {
+    display: none;
+  }
+
+  .column {
+    max-width: 480px;
+    margin: auto;
+  }
+
+  tbody td {
+    border: 1px solid gray;
+  }
+
+  .checkout {
+    margin: 20px auto;
+    max-width: 480px;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  td,
+  th {
+    padding: 10px;
+  }
+
+    .total td,
+    .total th {
+      width: 20px;
+    }
+  }

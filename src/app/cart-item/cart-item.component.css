@@ -1,0 +1,54 @@
+table{
+  width: 100%;
+  border: 1px solid grey;
+  margin-top: 16px;
+  border-collapse: collapse;
+}
+
+a:hover{
+  opacity: 0.9;
+}
+
+tr {
+  height: 48px;
+  border-bottom: 1px solid grey;  
+}
+
+th, td{
+  padding: 0 30px;  
+  text-align: left;
+}
+
+.index {
+  height: 30px;
+  background: rgb(206, 206, 206);
+}
+
+.footer {
+  height: 24px;
+  background: rgb(96, 96, 96);
+}
+
+img{
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 1000px;
+}
+
+.column {
+  margin: 16px auto;
+  max-width: 450px;
+}
+
+@media (min-width: 801px) {
+  .column {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .row {
+    display: none;    
+  }
+}

@@ -1,0 +1,95 @@
+<div class="container">    
+    <table class="row">
+        <thead>
+            <tr class="title">
+                <th colspan="5">Items</th> 
+            </tr>
+            <tr class="subtitle">
+                <th>Id</th>               
+                <th>Product Name</th>
+                <th colspan="2">Quantity</th>
+                <th>Price</th>
+                
+            </tr>
+            <tr *ngFor="let item of items;">
+                <td>{{item.itemId}}</td>               
+                <td>{{item.productName}}</td>
+                <td colspan="2">{{item.quantity}}</td>
+                <td>{{item.price}} Lei</td>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr class="title">
+                <th colspan="5">User Details:</th> 
+            </tr>
+            <tr class="subtitle">
+                <th>Name</th>
+                <th>Username</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            <tr>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="column">
+        <thead>
+            <tr class="title">
+                <th colspan="2">Order: {{order.orderId}}</th> 
+            </tr>
+        </thead>
+
+        <tbody *ngFor="let item of items;">
+            <tr class="subtitle">
+                <th colspan="2">{{item.itemId}}</th>
+            </tr>            
+            <tr>
+                <td>Product Name</td>
+                <td>{{item.productName}}</td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td>{{item.quantity}}</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>{{item.price}} Lei</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr class="title">
+                <td colspan="2">Details</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{user.name}}</td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td>{{user.username}}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{user.address}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{user.email}}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>{{user.phone}}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

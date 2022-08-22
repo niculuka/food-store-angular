@@ -1,0 +1,18 @@
+.container {
+    display: block;
+    text-align: center;
+}
+
+p {
+    font-size: 24px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button {
+    border: 1px solid grey;
+}

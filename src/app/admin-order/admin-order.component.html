@@ -1,0 +1,134 @@
+<div class="container">
+  
+  <div class="title">
+    <h1><strong>ORDERS {{order.orderId}}</strong></h1>
+    <h3>Orders number: {{orders.length}}</h3>
+  </div>
+
+
+  <table class="row">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Payment Type</th>
+        <th>Fav Delivery</th>
+        <th>Subtotal</th>        
+        <th>Total Price</th>
+        <th>User Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone</th>
+
+        <th>Status</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody *ngFor="let order of orders">
+      <tr>
+        <td><strong>{{order.orderId}}</strong></td>
+        <td>{{order.createdAt}}</td>
+        <td>{{order.paymentType}}</td>
+        <td>{{order.favoriteDelivery}} Lei</td>
+        <td>{{order.subtotal}} Lei</td>        
+        <td>{{order.totalPrice}} Lei</td>
+
+        <td>{{order.userIdGet}}</td>
+        <td>{{order.nameGet}}</td>
+        <td>{{order.emailGet}}</td>
+        <td>{{order.addressGet}}</td>
+        <td>{{order.phoneGet}}</td>
+
+        <td>
+          <button mat-button class="btn-status" (click)="updateStatus(order)">{{order.status}}</button>
+        </td>
+        <td>
+          <button mat-button class="btn-delete" (click)="deleteOrderDialog(order)">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <th class="items">Id</th>
+        <th colspan="3" class="items">Product Name</th>
+        <th colspan="3" class="items">Quantity</th>
+        <th colspan="3" class="items">Price</th>
+        <th colspan="3" class="items">Order Id</th>
+      </tr>
+      <tr *ngFor="let item of order.items">
+        <td class="items">{{item.itemId}}</td>
+        <td colspan="3" class="items"><strong>{{item.productName}}</strong></td>
+        <td colspan="3" class="items">{{item.quantity}} buc</td>
+        <td colspan="3" class="items">{{item.price}} Lei</td>
+        <td colspan="3" class="items">{{item.orderIdFk}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table class="column">
+    <tbody *ngFor="let order of orders">
+      <tr>
+        <th colspan="2">{{order.orderId}}</th>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td>{{order.createdAt}}</td>
+      </tr>
+      <tr>
+        <th>Payment Type</th>
+        <td>{{order.paymentType}}</td>
+      </tr>
+      <tr>
+        <th>Fav Delivery</th>
+        <td>{{order.favoriteDelivery}} Lei</td>
+      </tr>
+      <tr>
+        <th>Subtotal</th>
+        <td>{{order.subtotal}} Lei</td>
+      </tr>      
+      <tr>
+        <th>Total Price</th>
+        <td>{{order.totalPrice}} Lei</td>
+      </tr>
+      <tr>
+        <th>User Id</th>
+        <td>{{order.userIdGet}}</td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td>{{order.nameGet}}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{order.emailGet}}</td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td>{{order.addressGet}}</td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td>{{order.phoneGet}}</td>
+      </tr>
+
+      <tr class="items">
+        <th>Product Name</th>
+        <th>Quantity</th>
+      </tr>
+      <tr class="items" *ngFor="let item of order.items">
+        <td>{{item.productName}}</td>
+        <td>{{item.quantity}} buc</td>
+      </tr>
+      
+      <tr>
+        <th>Action</th>
+        <td>
+          <button mat-button class="btn-status" (click)="updateStatus(order)">{{order.status}}</button>
+          <button mat-button class="btn-delete" (click)="deleteOrderDialog(order)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

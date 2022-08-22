@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="title">
+      <h1><strong>USERS</strong></h1>
+      <h3>Users number: {{users.length}}</h3>
+    </div>
+      
+    <table class="row">
+      
+      <thead>
+        <tr>
+          <th>Id</th>           
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Date</th>
+          <th>Role</th>
+          <th>Active</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let user of users;">
+          <th>{{user.userId}}</th>          
+          <td><strong>{{user.name}}</strong></td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.address}}</td>
+          <td>{{user.createTime}}</td>
+          <td>
+            <button mat-button class="role" (click)="changeRole(user)">{{user.role}}</button>
+          </td>
+          <td><button mat-button class="enabled" (click)="changeEnabled(user)">{{user.enabled}}</button></td>
+          <td>
+              <button mat-button class="btn-delete" (click)="deleteUserDialog(user)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <table class="column">
+      <tbody *ngFor="let user of users;">
+        <tr>
+          <th colspan="2">{{user.userId}}</th>
+        </tr>        
+        <tr>
+          <th>Name</th>
+          <td>{{user.name}}</td>
+        </tr>
+        <tr>
+          <th>Username</th>
+          <td>{{user.username}}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td>{{user.phone}}</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>{{user.address}}</td>
+        </tr>
+        <tr>
+          <th>Date</th>
+          <td>{{user.createTime}}</td>
+        </tr>
+        <tr>
+          <th>Action</th>
+          <td>
+            <button mat-button class="role" (click)="changeRole(user)">{{user.role}}</button>
+            <button mat-button class="enabled" (click)="changeEnabled(user)">{{user.enabled}}</button>
+            <button mat-button class="btn-delete" (click)="deleteUserDialog(user)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+  
+  
+    </table>
+  
+  </div>

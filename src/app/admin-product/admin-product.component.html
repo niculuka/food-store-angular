@@ -1,0 +1,98 @@
+<div class="container">
+  
+  <div class="title">
+    <h1><strong>PRODUCTS</strong></h1>
+    <h3>Products number: {{products.length}}</h3>
+    <button mat-button class="btn-new" type="button" (click)="createProductDialog()">NEW</button>
+  </div>
+
+  <div class="forms">
+
+  </div>
+
+  <table class="row">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th>Edit</th>       
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of products;">
+        <td><strong>{{product.productId}}</strong></td>
+        <td>
+          <a routerLink="/product/{{product.linkName}}">
+            <img [src]="product.image" [alt]="product.name">
+          </a>
+        </td>
+        <td>
+          <strong>{{product.name}}</strong>
+        </td>
+        <td>{{product.description}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.price}} Lei</td>
+        <td>{{product.createTime}}</td>
+        <td>
+          <button mat-button class="btn-edit" (click)="updateProductDialog(product)">Edit</button>
+        </td>        
+        <td>
+          <button mat-button class="btn-delete" (click)="deleteProductDialog(product)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="column">
+    <tbody *ngFor="let product of products;">
+      <tr>
+        <th colspan="2">{{product.productId}}</th>
+      </tr>
+      <tr>
+        <th>Image</th>
+        <td>
+          <a routerLink="/product/{{product.linkName}}">
+            <img [src]="product.image" [alt]="product.name">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td><strong>{{product.name}}</strong></td>
+      </tr>
+      <tr>
+        <th>Description</th>
+        <td>{{product.description}}</td>
+      </tr>
+      <tr>
+        <th>Category</th>
+        <td>{{product.category}}</td>
+      </tr>
+      <tr>
+        <th>Price</th>
+        <td>{{product.price}} Lei</td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td>{{product.createTime}}</td>
+      </tr>
+      <tr>
+        <th>Action</th>
+        <td>
+          <button mat-button class="btn-edit" (click)="updateProductDialog(product)">Edit</button>        
+          <button mat-button class="btn-delete" (click)="deleteProductDialog(product)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+
+
+  </table>
+
+</div>

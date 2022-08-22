@@ -1,0 +1,153 @@
+nav {
+  background: #333;
+  height: 50px;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-size: 20px;
+  padding: 14px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a.active {
+  background: rgb(0, 152, 0);
+  color: white;
+}
+
+a:hover {
+  background: rgb(214, 213, 213);
+  color: #333;
+  cursor: pointer;
+}
+
+.cart a {
+  padding: 11px 30px;
+}
+
+mat-icon {
+  padding: 0 5px 0 0;
+}
+
+.submenu {
+  position: relative;
+}
+
+.submenu-links {
+  position: absolute;
+  background: #333;
+  display: none;
+}
+
+.submenu:hover .submenu-links {
+  display: block;
+}
+
+.submenu-links a {
+  min-width: 120px;
+  border-bottom: 1px solid white;
+}
+
+select {
+  width: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  background: transparent;
+}
+
+#check {
+  display: none;
+}
+
+.checkbtn {
+  display: none;
+  margin: 14px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 550px) {
+  nav {
+    flex-direction: row;
+    justify-content: flex-start;
+    background: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .burger {
+    height: 50px;
+    background: #333;
+  }
+
+  .checkbtn {
+    display: block;
+    float: right;
+  }
+
+  .menu {
+    width: 150px;
+    background: #333;
+    display: flex;
+    position: relative;
+    transition: .5s;
+    left: -100%;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  ul {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cart a {
+    padding: 14px;
+  }
+
+  .submenu:hover .submenu-links {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  a {
+    width: 122px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid white;
+  }
+
+  a:first-child {
+    border-top: 1px solid white;
+    ;
+  }
+
+  #check:checked+.menu {
+    left: 0;
+  }
+}

@@ -1,0 +1,117 @@
+.container {
+  margin-top: 100px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+img {
+  width: 800px;
+  border: 1px solid grey;
+  transition: .3s;
+}
+
+.details {
+  margin-top: 20px;
+  width: 800px;
+  background: rgb(251, 249, 243);
+  border: 1px solid grey;
+  transition: .3s;
+}
+
+.align {
+  padding: 40px 20px 20px 40px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 30px;
+  line-height: normal;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.btn {
+  text-align: center;
+}
+
+button {
+  width: 50%;
+  margin: 30px 0;
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 10px 20px 10px 20px;
+  background: rgb(19, 180, 92);
+}
+
+button:hover {
+  background: rgb(39, 208, 115);
+  cursor: pointer;
+}
+
+@media (max-width: 820px) {
+  img {
+    width: 500px;
+  }
+
+  .details {
+    width: 500px;
+  }
+
+  .align {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 530px) {
+  img {
+    width: 300px;
+  }
+
+  .details {
+    width: 300px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  button {
+    width: 80%;
+    font-size: 20px;
+  }
+}

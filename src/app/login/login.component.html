@@ -1,0 +1,26 @@
+<div class="container">
+  <form #f="ngForm" (ngSubmit)="f.form.valid && login()">
+
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput class="test" type="text" name="username" [(ngModel)]="user.username" #username="ngModel" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+    </mat-form-field>
+
+
+
+    <div class="alert" *ngIf="message">{{message}}</div>
+
+
+    <button mat-button type="submit">LOGIN</button>
+
+
+    <a routerLink="/auth/register">Register here!</a>
+
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="display" *ngIf="product">
+
+    <img [src]="product.image" alt="Avatar" />
+
+    <div class="details">
+
+      <div class="align">
+        <h1><strong>{{product.name}}</strong></h1>
+        <p>{{product.description}}</p>
+        <h2>Preț: {{product.price}} Lei</h2>
+        <div class="btn">
+          <button (click)="addToCart()">Add to cart</button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

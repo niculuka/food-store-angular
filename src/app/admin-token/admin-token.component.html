@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="title">
+        <h1><strong>TOKENS</strong></h1>
+        <h3>Tokens number: {{tokens.length}}</h3>
+    </div>
+
+    <table class="row">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Confirmed At</th>
+                <th>Created At</th>
+                <th>Expires At</th>
+                <th>Token</th>
+                <th>User Id</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let token of tokens">
+                <th>{{token.tokenId}}</th>
+                <td>{{token.confirmedAt}}</td>
+                <td>{{token.createdAt}}</td>
+                <td>{{token.expiresAt}}</td>
+                <td>{{token.token}}</td>
+                <td>{{token.userIdFk}}</td>
+                <td>
+                    <button mat-button class="btn-delete" (click)="deleteTokenDialog(token)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="column">
+        <tbody *ngFor="let token of tokens">
+            <tr>
+                <th colspan="2">{{token.tokenId}}</th>
+            </tr>
+            <tr>
+                <th>Confirmed At</th>
+                <td>{{token.confirmedAt}}</td>
+            </tr>
+            <tr>
+                <th>Created At</th>
+                <td>{{token.createdAt}}</td>
+            </tr>
+            <tr>
+                <th>Expires At</th>
+                <td>{{token.expiresAt}}</td>
+            </tr>
+            <tr>
+                <th>Token</th>
+                <td>{{token.token}}</td>
+            </tr>
+            <tr>
+                <th>User Id</th>
+                <td>{{token.userIdFk}}</td>
+            </tr>
+            <tr>
+                <th>Action</th>
+                <td>
+                    <button mat-button class="btn-delete" (click)="deleteTokenDialog(token)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

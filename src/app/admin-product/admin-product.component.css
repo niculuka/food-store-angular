@@ -1,0 +1,147 @@
+.container {
+  margin: 10px 20px 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  width: 100%;
+}
+
+.forms {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+table {
+  margin-top: 20px;
+  border: 2px solid rgb(186, 184, 184);
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  word-wrap: break-word;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:hover {
+  background-color: rgb(174, 174, 174);
+}
+
+.btn-new {
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 600;  
+  background: white;
+  cursor: pointer;
+  border: 2px solid rgb(182, 181, 181);  
+}
+
+.btn-new:hover {
+  color: white;
+  background: rgb(93, 93, 93);
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+img:hover {
+  background: white;
+}
+
+.btn-edit {
+  margin: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(79, 190, 4);
+  background: white;
+  cursor: pointer;
+  border: 2px solid rgb(182, 181, 181);
+}
+
+.btn-edit:hover {
+  color: white;
+  background: rgb(79, 190, 4);
+}
+
+.btn-delete {
+  margin: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgb(247, 120, 120);
+  border: 2px solid grey;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  color: white;
+  background: rgb(250, 46, 46);
+}
+
+.column {
+  display: none;
+}
+
+
+@media (max-width: 1000px) {
+  .forms {
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .title {
+    max-width: 400px;
+  }
+
+  .row {
+    display: none;
+  }
+
+  .column {
+    display: block;
+    max-width: 400px;
+  }  
+
+  tbody {
+    border: 2px solid grey;
+  }
+
+  .btn-new {
+    float: right;
+  }
+
+}
+
+@media (max-width: 420px) {  
+
+  .btn-edit {
+    padding: 0 4px;
+  }
+  .btn-status {
+      padding: 0 4px;
+  }
+
+  .btn-delete {
+      padding: 0 4px;
+  }
+}

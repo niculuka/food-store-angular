@@ -1,0 +1,58 @@
+<div class="form-edit">
+
+    <form #f="ngForm" (ngSubmit)="f.form.valid && updateProduct(product)">
+        <div class="form-group">
+            <label for="id">Id: {{product.productId}}</label>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" [(ngModel)]="product.name" #name="ngModel" minlength="1" maxlength="30"
+                required>
+            <div class="alert-danger" *ngIf="!name.valid && f.submitted">Empty value!
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" name="description" [(ngModel)]="product.description" #description="ngModel" minlength="1"
+                maxlength="100" required>
+            <div class="alert-danger" *ngIf="!description.valid && f.submitted">Empty value!
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select name="category" #categorySelect [(ngModel)]="product.category">
+                <option value="MENU">MENU</option>
+                <option value="BURGER">BURGER</option>
+                <option value="KEBAB">KEBAB</option>
+                <option value="SHAWARMA">SHAWARMA</option>
+                <option value="PIZZA">PIZZA</option>
+                <option value="PASTA">PASTA</option>
+                <option value="SAUCE">SAUCE</option>
+                <option value="SOUP">SOUP</option>
+                <option value="SALAD">SALAD</option>
+                <option value="DRINK">DRINK</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image</label>
+            <img [(src)]="product.image" alt="{{product.image}}">
+            <input type="file" (change)="onFileSelected($event)">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" name="price" [(ngModel)]="product.price" #price="ngModel" min="0.1" max="1000000"
+                required>
+            <div class="alert-danger" *ngIf="!price.valid && f.submitted">Price between 0.1 - 1.000.000
+            </div>
+
+            <button class="btn-submit" type="submit">Submit</button>
+        </div>
+
+    </form>
+
+</div>

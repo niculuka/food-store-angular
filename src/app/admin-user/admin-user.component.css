@@ -1,0 +1,130 @@
+.container {
+  margin: 10px 20px 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  width: 100%;
+}
+
+h1 {
+  text-align: left;
+}
+
+table {
+  border: 2px solid rgb(186, 184, 184);
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  word-wrap: break-word;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:hover {
+  background-color: rgb(174, 174, 174);
+}
+
+.role {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 2px;
+  background: white;
+  cursor: pointer;
+  border: 1px solid grey;
+  color: rgb(7, 157, 207);
+  cursor: pointer;
+}
+
+.role:hover {
+  color: white;
+  background: rgb(12, 188, 247);
+}
+
+.enabled {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 2px;
+  background: white;
+  cursor: pointer;
+  border: 1px solid grey;
+  color: rgb(42, 155, 4);
+  cursor: pointer;
+}
+
+.enabled:hover {
+  color: white;
+  background: rgb(42, 155, 4);
+}
+
+.btn-delete {
+  margin: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgb(247, 120, 120);
+  border: 2px solid grey;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  color: white;
+  background: rgb(250, 46, 46);
+}
+
+@media (min-width: 851px) {
+  .column {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .forms {
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .row {
+    display: none;
+  }
+
+  .column {
+    max-width: 400px;
+  }
+
+  tbody {
+    border: 2px solid grey;
+  }
+
+  .last {
+    height: 50px;
+  }
+
+}
+
+@media (max-width: 420px) {
+  .role {
+    padding: 0 4px;
+  }
+
+  .btn-status {
+      padding: 0 4px;
+  }
+
+  .btn-delete {
+      padding: 0 4px;
+  }
+}

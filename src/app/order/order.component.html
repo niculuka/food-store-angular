@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div class="content">
+    <h3>Order Form</h3>
+    <label>Name: </label>
+    <label><b>{{order.nameGet}}</b></label>
+    <hr>
+    <label>Email: </label>
+    <label><b>{{order.emailGet}}</b></label>
+    <hr>
+    <label>Phone: </label>
+    <label><b>{{order.phoneGet}}</b></label>
+    <hr>
+    <label>Address: </label>
+    <label><b>{{order.addressGet}}</b></label>
+    
+    <a routerLink="/profile">edit profile!</a>
+
+    <cart-item [order]="order"></cart-item>
+
+  </div>
+
+  <div class="content">
+    <h3>Payment method:</h3>
+    <div class="money">
+
+      <div class="radio">
+        <input type="radio" id="cash" value="CASH" [(ngModel)]="order.paymentType" (change)="paymentMethod()">
+        <label for="cash">Cash</label>
+      </div>
+
+      <div class="radio">
+        <input type="radio" id="card" value="CARD" [(ngModel)]="order.paymentType" (change)="paymentMethod()">
+        <label for="card">Card</label>
+      </div>
+    </div>
+  </div>
+
+  <payment-form [order]="order" *ngIf="payWithCard()"></payment-form>
+
+  <div class="conditions">
+    <input type="checkbox" id="condition" [(ngModel)]="conditions" (change)="conditionsCheck()">
+    <label for="condition">I am agree with </label>
+    <a href="#">conditions</a>
+    <div class="error" *ngIf="errorMessage()">{{message}}</div>
+  </div>
+
+  <div class="buttons-container">
+    <div class="buttons">
+      <button (click)="createOrder()">
+        Order
+      </button>
+    </div>
+  </div>
+
+
+
+</div>
