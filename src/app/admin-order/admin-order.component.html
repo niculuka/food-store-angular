@@ -48,13 +48,6 @@
           <button mat-button class="btn-delete" (click)="deleteOrderDialog(order)">Delete</button>
         </td>
       </tr>
-      <tr>
-        <th class="items">Id</th>
-        <th colspan="3" class="items">Product Name</th>
-        <th colspan="3" class="items">Quantity</th>
-        <th colspan="3" class="items">Price</th>
-        <th colspan="3" class="items">Order Id</th>
-      </tr>
       <tr *ngFor="let item of order.items">
         <td class="items">{{item.itemId}}</td>
         <td colspan="3" class="items"><strong>{{item.productName}}</strong></td>
@@ -112,13 +105,9 @@
         <td>{{order.phoneGet}}</td>
       </tr>
 
-      <tr class="items">
-        <th>Product Name</th>
-        <th>Quantity</th>
-      </tr>
-      <tr class="items" *ngFor="let item of order.items">
-        <td>{{item.productName}}</td>
-        <td>{{item.quantity}} buc</td>
+      <tr *ngFor="let item of order.items">
+        <td class="items"><strong>{{item.productName}}</strong></td>
+        <td class="items">{{item.quantity}} buc</td>
       </tr>
       
       <tr>
