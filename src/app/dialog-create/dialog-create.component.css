@@ -17,7 +17,7 @@ form {
 }
 
 img {
-  margin: 6px 0 ;
+  margin: 6px 0;
 }
 
 input {
@@ -48,4 +48,10 @@ select {
 
 .btn-create:hover {
   box-shadow: 1px 1px 16px rgb(0, 204, 177);
+}
+
+@media (max-width: 450px) {
+  .form-create {
+    width: 260px;
+  }
 }

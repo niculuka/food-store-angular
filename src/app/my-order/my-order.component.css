@@ -1,5 +1,5 @@
 .container {
-    margin: 10px 20px 0 20px;
+    margin: 20px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -51,6 +51,8 @@ tr:hover {
     background: white;
     cursor: pointer;
     border: 2px solid rgb(182, 181, 181);
+    position: static;
+    z-index: -1;
 }
 
 .btn-reOrder:hover {

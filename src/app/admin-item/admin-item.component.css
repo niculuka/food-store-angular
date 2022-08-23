@@ -42,6 +42,8 @@ tr:hover {
     background: rgb(247, 120, 120);
     border: 2px solid grey;
     cursor: pointer;
+    position: static;
+    z-index: -1;
 }
 
 .btn-delete:hover {
