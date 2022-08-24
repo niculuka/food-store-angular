@@ -18,9 +18,14 @@ textarea{
   max-height: 100px;
 }
 
+.edit {
+  margin: 20px;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
+  margin: auto;
   width: 400px;
   max-width: 400px;
 }
@@ -84,13 +89,18 @@ button:hover {
   background: rgb(23, 240, 251);
 }
 
-.edit {
-  margin-top: 20px;
-  width: 400px;
-}
 
 @media (max-width: 550px) {
   .container {
     margin: 10px auto;
+  }
+
+  table {
+    width: 340px;
+    max-width: 340px;
+  }
+
+  form {
+    width: 340px;
   }
 }
