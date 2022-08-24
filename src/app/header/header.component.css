@@ -109,7 +109,7 @@ select {
   }
 
   .menu {
-    width: 150px;
+    width: 100px;
     background: #333;
     display: flex;
     position: relative;
@@ -137,10 +137,19 @@ select {
   }
 
   a {
-    width: 122px;
+    font-size: 16px;
+    width: 72px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     height: 30px;
     line-height: 30px;
     border-bottom: 1px solid white;
+  }
+
+  .cart mat-icon {
+    padding: 0;
+    font-size: 20px;
+    margin: 0;
   }
 
   a:first-child {
