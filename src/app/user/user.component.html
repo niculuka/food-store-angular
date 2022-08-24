@@ -2,54 +2,57 @@
 
 
   <!-- PROFILE =============================================================================================== -->
-  <table>
+  <div>
+    <table>
 
-    <thead>
-      <tr>
-        <th colspan="2">Profile:</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td class="left" style="width: 10%;"><strong>Username</strong></td>
-        <td>{{currentUser.username}}</td>
-      </tr>
-      <tr>
-        <td class="left"><strong>Password</strong></td>
-        <td><strong>********</strong></td>
-      </tr>
-      <tr>
-        <td class="left"><strong>Name</strong></td>
-        <td>{{currentUser.name}}</td>
-      </tr>
-      <tr>
-        <td class="left"><strong>Email</strong></td>
-        <td>{{currentUser.email}}</td>
-      </tr>
-      <tr>
-        <td class="left"><strong>Phone</strong></td>
-        <td>{{currentUser.phone}}</td>
-      </tr>
-      <tr>
-        <td class="left"><strong>Address</strong></td>
-        <td>{{currentUser.address}}</td>
-      </tr>
-      <tr>
-        <td class="left"><strong>Role</strong></td>
-        <td>{{currentUser.role}}</td>
-      </tr>
-    </tbody>
-
-  </table>
-
-
-  <!-- EDIT PROFILE ==================================================================================================== -->
-  <div class="edit">
-    <a (click)="editPassword()">Edit Password</a><br>
-    <a (click)="editProfile()">Edit Profile</a><br>
-    <a (click)="removeAccount()">Delete account</a>
+      <thead>
+        <tr>
+          <th colspan="2">Profile:</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr>
+          <td class="left" style="width: 10%;"><strong>Username</strong></td>
+          <td>{{currentUser.username}}</td>
+        </tr>
+        <tr>
+          <td class="left"><strong>Password</strong></td>
+          <td><strong>********</strong></td>
+        </tr>
+        <tr>
+          <td class="left"><strong>Name</strong></td>
+          <td>{{currentUser.name}}</td>
+        </tr>
+        <tr>
+          <td class="left"><strong>Email</strong></td>
+          <td>{{currentUser.email}}</td>
+        </tr>
+        <tr>
+          <td class="left"><strong>Phone</strong></td>
+          <td>{{currentUser.phone}}</td>
+        </tr>
+        <tr>
+          <td class="left"><strong>Address</strong></td>
+          <td>{{currentUser.address}}</td>
+        </tr>
+        <tr>
+          <td class="left"><strong>Role</strong></td>
+          <td>{{currentUser.role}}</td>
+        </tr>
+      </tbody>
+  
+    </table>
+  
+  
+    <!-- EDIT PROFILE ==================================================================================================== -->
+    <div class="edit">
+      <a (click)="editPassword()">Edit Password</a><br>
+      <a (click)="editProfile()">Edit Profile</a><br>
+      <a (click)="removeAccount()">Delete account</a>
+    </div>
   </div>
+  
 
 
 
