@@ -1,5 +1,5 @@
 .form-edit {
-    width: 300px;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
 }
 
 form {
-    width: 200px;
+    width: 70%;
 }
 
 .form-group {
@@ -51,8 +51,20 @@ select {
     box-shadow: 1px 1px 16px rgb(0, 194, 94);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
     .form-edit {
       width: 240px;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    .form-group {
+        margin-top: 10px;
+    }
+
+    .btn-submit {
+        margin: 20px 0;
     }
   }

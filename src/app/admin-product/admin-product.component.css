@@ -10,11 +10,8 @@
   width: 100%;
 }
 
-.forms {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.col {
+  display: none;
 }
 
 table {
@@ -22,8 +19,7 @@ table {
   border: 2px solid rgb(186, 184, 184);
   font-family: arial, sans-serif;
   font-size: 16px;
-  border-collapse: collapse;
-  width: 100%;
+  border-collapse: collapse;  
 }
 
 td,
@@ -99,11 +95,6 @@ img:hover {
   background: rgb(250, 46, 46);
 }
 
-.column {
-  display: none;
-}
-
-
 @media (max-width: 1000px) {
   .forms {
     width: auto;
@@ -111,18 +102,17 @@ img:hover {
     justify-content: center;
   }
 
-  .title {
-    max-width: 400px;
-  }
-
   .row {
     display: none;
   }
 
-  .column {
+  .col {
     display: block;
-    max-width: 400px;
   }  
+
+  table {
+    border: none;
+  }
 
   tbody {
     border: 2px solid grey;

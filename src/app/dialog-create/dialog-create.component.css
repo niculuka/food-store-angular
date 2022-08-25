@@ -1,5 +1,5 @@
 .form-create {
-  width: 300px;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +7,7 @@
 }
 
 form {
-  width: 200px;
+  width: 70%;
 }
 
 .form-group {
@@ -50,8 +50,12 @@ select {
   box-shadow: 1px 1px 16px rgb(0, 204, 177);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   .form-create {
     width: 240px;
+  }
+
+  form {
+    width: 90%;
   }
 }

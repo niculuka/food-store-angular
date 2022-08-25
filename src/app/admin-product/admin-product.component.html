@@ -6,10 +6,6 @@
     <button mat-button class="btn-new" type="button" (click)="createProductDialog()">NEW</button>
   </div>
 
-  <div class="forms">
-
-  </div>
-
   <table class="row">
     <thead>
       <tr>
@@ -50,7 +46,7 @@
     </tbody>
   </table>
 
-  <table class="column">
+  <table class="col">
     <tbody *ngFor="let product of products;">
       <tr>
         <th colspan="2">{{product.productId}}</th>
