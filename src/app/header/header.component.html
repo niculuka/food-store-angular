@@ -20,11 +20,11 @@
             <a routerLink="/products" routerLinkActive="active">Products</a>
           </li>
 
-          <li class="submenu" *ngIf="isAdmin()">
-            <a>Admin
+          <li class="dropdown" *ngIf="isAdmin()">
+            <a class="btn-dropdown">Admin
               <select></select>
             </a>
-            <div class="submenu-links">
+            <div class="dropdown-menu">
               <a routerLink="/admin/products" routerLinkActive="active">Products</a>
               <a routerLink="/admin/orders" routerLinkActive="active">Orders</a>
               <a routerLink="/admin/items" routerLinkActive="active">Items</a>
@@ -38,11 +38,11 @@
           <li *ngIf="!currentUser?.userId">
             <a routerLink="auth/login" routerLinkActive="active">Login</a>
           </li>
-          <li class="submenu" *ngIf="currentUser?.userId">
+          <li class="dropdown" *ngIf="currentUser?.userId">
             <a>{{currentUser.username}}
               <select></select>
             </a>
-            <div class="submenu-links">
+            <div class="dropdown-menu">
               <a routerLink="/profile" routerLinkActive="active">Profile</a>
               <a routerLink="/my-orders" routerLinkActive="active">My Orders</a>
               <a routerLink="/" (click)="logout()">Logout</a>

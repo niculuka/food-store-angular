@@ -47,23 +47,27 @@ mat-icon {
   padding: 0 5px 0 0;
 }
 
-.submenu {
+.dropdown {
   position: relative;
 }
 
-.submenu-links {
+.dropdown-menu {
   position: absolute;
   background: #333;
   display: none;
 }
 
-.submenu:hover .submenu-links {
+.dropdown-menu a {
+  width: 120px;
+  border-bottom: 1px solid white;
+}
+
+.dropdown:hover .dropdown-menu {
   display: block;
 }
 
-.submenu-links a {
-  min-width: 120px;
-  border-bottom: 1px solid white;
+.dropdown:hover::after .dropdown-menu {
+  display: none;
 }
 
 select {
@@ -109,14 +113,14 @@ select {
   }
 
   .menu {
-    width: 150px;
+    width: 100px;
     background: #333;
     display: flex;
     position: relative;
     transition: .5s;
     left: -100%;
   }
-
+   
   .column {
     flex-direction: column;
   }
@@ -131,21 +135,30 @@ select {
     padding: 14px;
   }
 
-  .submenu:hover .submenu-links {
+  .cart a mat-icon {
+    font-size: 20px;
+  }
+
+  .dropdown:hover .dropdown-menu {
     display: inline-flex;
     flex-direction: column;
   }
 
   a {
-    width: 122px;
-    height: 30px;
-    line-height: 30px;
+    width: 72px;
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
     border-bottom: 1px solid white;
   }
 
   a:first-child {
     border-top: 1px solid white;
     ;
+  } 
+  
+  .dropdown-menu a {
+    width: 80px;
   }
 
   #check:checked+.menu {
