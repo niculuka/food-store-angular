@@ -33,7 +33,7 @@
           <td>
             <button mat-button class="role" (click)="changeRole(user)">{{user.role}}</button>
           </td>
-          <td><button mat-button class="enabled" (click)="changeEnabled(user)">{{user.enabled}}</button></td>
+          <td><button mat-button class="enabled" (click)="changeEnabled(user)">{{user.enabled ? "Active": "Inactive" }}</button></td>
           <td>
               <button mat-button class="btn-delete" (click)="deleteUserDialog(user)">Delete</button>
           </td>
@@ -74,7 +74,7 @@
           <th>Action</th>
           <td>
             <button mat-button class="role" (click)="changeRole(user)">{{user.role}}</button>
-            <button mat-button class="enabled" (click)="changeEnabled(user)">{{user.enabled}}</button>
+            <button mat-button class="enabled" (click)="changeEnabled(user)">{{user.enabled ? "Active": "Inactive" }}</button>
             <button mat-button class="btn-delete" (click)="deleteUserDialog(user)">Delete</button>
           </td>
         </tr>
