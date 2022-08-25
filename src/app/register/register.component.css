@@ -7,7 +7,8 @@
 
 form {
   width: 400px;
-  height: 700px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -27,6 +28,14 @@ mat-form-field {
   width: 70%;
 }
 
+::ng-deep .mat-form-field-label {
+  z-index: -1;
+}
+
+::ng-deep .mat-form-field-underline {
+  z-index: -1;
+}
+
 textarea {
   max-width: 100%;
   max-height: 100px;
@@ -38,7 +47,9 @@ textarea {
 }
 
 .alert-danger {
+  width: 70%;
   color: red;
+  text-align: center;
 }
 
 button {
@@ -74,8 +85,10 @@ a:hover {
   .container {
     margin-top: 50px;
   }
-  
+
   form {
     width: 340px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }

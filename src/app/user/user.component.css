@@ -13,7 +13,7 @@ mat-form-field {
   width: 70%;
 }
 
-textarea{
+textarea {
   max-width: 100%;
   max-height: 100px;
 }
@@ -30,7 +30,7 @@ table {
   max-width: 400px;
 }
 
-tr {  
+tr {
   border-bottom: 1px solid grey;
 }
 
@@ -41,8 +41,9 @@ th {
   font-size: 22px;
 }
 
-th {
+thead th {
   font-size: 36px;
+  text-align: left;
   padding: 30px 30px 30px 20px;
 }
 
@@ -98,6 +99,16 @@ button:hover {
   table {
     width: 340px;
     max-width: 340px;
+  }
+
+  td,
+  th {
+    font-size: 18px;
+    padding: 18px;
+  }
+
+  thead th {
+    font-size: 32px;
   }
 
   form {
