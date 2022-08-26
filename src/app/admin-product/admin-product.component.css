@@ -6,12 +6,12 @@
   align-items: center;
 }
 
-.title {
+.row {
   width: 100%;
 }
 
-.col {
-  display: none;
+.title {
+  width: 100%;
 }
 
 table {
@@ -93,6 +93,10 @@ img:hover {
 .btn-delete:hover {
   color: white;
   background: rgb(250, 46, 46);
+}
+
+.col {
+  display: none;
 }
 
 @media (max-width: 1000px) {

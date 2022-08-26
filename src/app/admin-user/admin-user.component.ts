@@ -45,6 +45,10 @@ export class AdminUserComponent implements OnInit {
       this.errorMessage = "Cannot change this role!";
       return;
     }
+    if (user.username === "Ana") {
+      this.toastrService.warning("You cannot change this role!");
+      return;
+    }
 
     let role = this.user.role === Role.ADMIN ? Role.USER : Role.ADMIN;
 
@@ -63,8 +67,11 @@ export class AdminUserComponent implements OnInit {
     this.user = user;
 
     if (this.currentUser.username === this.user.username) {
-      this.toastrService.warning("Cannot change this status!", this.currentUser.username)
-      this.errorMessage = "Cannot change this status!";
+      this.toastrService.warning("Cannot change this status!", this.currentUser.username);
+      return;
+    }
+    if (user.username === "Ana") {
+      this.toastrService.warning("Cannot disable this account!");
       return;
     }
 
@@ -97,7 +104,11 @@ export class AdminUserComponent implements OnInit {
 
   deleteUser(user: User) {
     if (this.currentUser.username === user.username) {
-      this.toastrService.warning("Cannot delete this user!", this.currentUser.username)
+      this.toastrService.warning("Cannot delete this user", this.currentUser.username);
+      return;
+    }
+    if (user.username === "Ana") {
+      this.toastrService.warning("You can't delete user: " + user.name);
       return;
     }
     this.adminUserService.deleteUserService(user).subscribe({
