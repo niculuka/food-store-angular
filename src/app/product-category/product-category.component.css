@@ -11,8 +11,8 @@
   }
 
   h1 {
-    margin-top: 40px;
     font-size: 28px;
+    padding-top: 40px;
   }
 
   a {
@@ -36,10 +36,8 @@
   }
   
   .product {
-    height: 126px;
-    line-height: 70px;
-    /* borderul asta e pt ca nu da click pe marginea scrisului */
-    border: 2px solid rgb(255, 255, 255);
+    margin: auto;
+    height: 40%;
   } 
   
   
