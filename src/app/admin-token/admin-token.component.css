@@ -50,30 +50,25 @@ tr:hover {
   }
   
 
-@media (min-width: 851px) {
+@media (min-width: 1201px) {
     .column {
         display: none;
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1200px) {
     .row {
         display: none;
     }
 
-    .column {
-        max-width: 400px;
+    .container {
+        margin: auto;
+        padding: 6px;
+        max-width: 500px;
     }
 
     tbody {
         border: 2px solid grey;
     }
 
-}
-
-@media (max-width: 420px) {
-
-    .btn-delete {
-        padding: 0 4px;
-    }
 }

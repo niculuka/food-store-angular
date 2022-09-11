@@ -41,7 +41,7 @@
   <div class="conditions">
     <input type="checkbox" id="condition" [(ngModel)]="conditions" (change)="conditionsCheck()">
     <label for="condition">I am agree with </label>
-    <a href="#">conditions</a>
+    <a (click)="conditionsAgreement()">conditions</a>
     <div class="error" *ngIf="errorMessage()">{{message}}</div>
   </div>
 

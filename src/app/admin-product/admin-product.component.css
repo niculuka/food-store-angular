@@ -11,6 +11,7 @@
 }
 
 .title {
+  margin: 20px 0;
   width: 100%;
 }
 
@@ -110,6 +111,12 @@ img:hover {
     display: none;
   }
 
+  .container {
+    max-width: 500px;
+    margin: auto;
+    padding: 6px;
+  }
+
   .col {
     display: block;
   }  
@@ -129,6 +136,9 @@ img:hover {
 }
 
 @media (max-width: 420px) {  
+  .container {
+    max-width: 380px;
+  }
 
   .btn-edit {
     padding: 0 4px;

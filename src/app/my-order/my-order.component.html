@@ -29,18 +29,12 @@
                     <button mat-button class="btn-reOrder" (click)="reOrder()">Re Order</button>
                 </td>
             </tr>
-            <tr>
-                <th class="items"></th>
-                <th class="items" colspan="2">Product Name</th>
-                <th class="items" colspan="2">Quantity</th>
-                <th class="items" colspan="2">Price</th>
-              </tr>
-              <tr *ngFor="let item of order.items">
+            <tr *ngFor="let item of order.items">
                 <td class="items"></td>
                 <td class="items" colspan="2"><strong>{{item.productName}}</strong></td>
                 <td class="items" colspan="2">{{item.quantity}} buc</td>
                 <td class="items" colspan="2">{{item.price}} Lei</td>
-              </tr>
+            </tr>
         </tbody>
     </table>
 
@@ -48,31 +42,36 @@
     <table class="column">
         <tbody *ngFor="let order of orders; index as ind">
             <tr>
-                <th colspan="2">{{ind+1}}</th>
-            </tr>
+                <th class="items" colspan="3">{{ind+1}}</th>
+            </tr>            
             <tr>
                 <th>Date</th>
-                <td>{{order.createdAt}}</td>
+                <td colspan="2">{{order.createdAt}}</td>
             </tr>
             <tr>
                 <th>Payment Type</th>
-                <td>{{order.paymentType}}</td>
-            </tr>
+                <td colspan="2">{{order.paymentType}}</td>
+            </tr> 
+            <tr *ngFor="let item of order.items">
+                <td class="items"><strong>{{item.productName}}</strong></td>
+                <td class="items">{{item.quantity}} buc</td>
+                <td class="items">{{item.price}} Lei</td>
+            </tr>           
             <tr>
                 <th>Subtotal</th>
-                <td>{{order.subtotal}} Lei</td>
+                <td colspan="2">{{order.subtotal}} Lei</td>
             </tr>
             <tr>
                 <th>Fav Delivery</th>
-                <td>{{order.favoriteDelivery}} Lei</td>
+                <td colspan="2">{{order.favoriteDelivery}} Lei</td>
             </tr>
             <tr>
                 <th>Total Price</th>
-                <td><strong>{{order.totalPrice}} Lei</strong></td>
+                <td colspan="2"><strong>{{order.totalPrice}} Lei</strong></td>
             </tr>
             <tr>
                 <th>Action</th>
-                <td>
+                <td colspan="2">
                     <button mat-button class="btn-reOrder" (click)="reOrder()">Re Order</button>
                 </td>
             </tr>

@@ -85,13 +85,13 @@ tr:hover {
   background: rgb(250, 46, 46);
 }
 
-@media (min-width: 851px) {
+@media (min-width: 1301px) {
   .column {
     display: none;
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1300px) {
   .forms {
     width: auto;
     flex-direction: column;
@@ -102,8 +102,10 @@ tr:hover {
     display: none;
   }
 
-  .column {
-    max-width: 400px;
+  .container {
+    margin: auto;
+    padding: 0 6px;
+    max-width: 600px;
   }
 
   tbody {

@@ -58,12 +58,14 @@ tr:hover {
 }
 
 @media (max-width: 850px) {
-    .row {
-        display: none;
+    .container {
+        margin: auto;
+        padding: 0 6px;
+        max-width: 500px;
     }
 
-    .column {
-        max-width: 400px;
+    .row {
+        display: none;
     }
 
     tbody {

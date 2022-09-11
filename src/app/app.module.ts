@@ -36,7 +36,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogCreateComponent } from './dialog-create/dialog-create.component';
 import { DialogDeleteProductComponent } from './dialog-delete-product/dialog-delete-product.component';
 import { DialogUpdateComponent } from './dialog-update/dialog-update.component';
@@ -44,6 +44,7 @@ import { DialogDeleteOrderComponent } from './dialog-delete-order/dialog-delete-
 import { DialogDeleteItemComponent } from './dialog-delete-item/dialog-delete-item.component';
 import { DialogDeleteUserComponent } from './dialog-delete-user/dialog-delete-user.component';
 import { DialogDeleteTokenComponent } from './dialog-delete-token/dialog-delete-token.component';
+import { OrderAgreementComponent } from './order-agreement/order-agreement.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { DialogDeleteTokenComponent } from './dialog-delete-token/dialog-delete-
     DialogDeleteItemComponent,
     DialogDeleteUserComponent,
     DialogDeleteTokenComponent,
+    OrderAgreementComponent,
   ],
   imports: [
     BrowserModule,

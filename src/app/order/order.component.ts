@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Order } from 'src/app/model/order.model';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { PaymentType } from '../model/payment-type.enum';
+import { OrderAgreementComponent } from '../order-agreement/order-agreement.component';
 import { OrderService } from '../service/order.service';
 
 @Component({
@@ -25,6 +27,7 @@ export class OrderComponent implements OnInit {
     private toastrService: ToastrService,
     private router: Router,
     private orderService: OrderService,
+    public matDialog: MatDialog
   ) {
     const cart = cartService.getCart();
     this.order.items = cart.items;
@@ -60,6 +63,10 @@ export class OrderComponent implements OnInit {
   conditionsCheck() {
     const conditionsJson = JSON.stringify(this.conditions);
     localStorage.setItem('conditions-ls', conditionsJson);
+  }
+
+  conditionsAgreement() {
+    const agrement = this.matDialog.open(OrderAgreementComponent);
   }
 
   errorMessage() {

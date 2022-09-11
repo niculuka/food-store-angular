@@ -78,9 +78,22 @@ button:hover {
   margin: 10px;
 }
 
+.conditions a {
+  cursor: pointer;
+}
+
 .error {
   color: red;
+  font-size: 14px;
   margin-left: 30px;
+}
+
+@media (max-width: 800px) {
+  .container {
+    margin: auto;
+    padding: 0 6px;
+    max-width: 400px;
+  }
 }
 
 @media (max-width: 550px) {

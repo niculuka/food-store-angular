@@ -62,57 +62,56 @@
   <table class="column">
     <tbody *ngFor="let order of orders">
       <tr>
-        <th colspan="2">{{order.orderId}}</th>
+        <th class="items" colspan="3">{{order.orderId}}</th>
       </tr>
       <tr>
         <th>Date</th>
-        <td>{{order.createdAt}}</td>
+        <td colspan="2">{{order.createdAt}}</td>
       </tr>
       <tr>
         <th>Payment Type</th>
-        <td>{{order.paymentType}}</td>
+        <td colspan="2">{{order.paymentType}}</td>
       </tr>
-      <tr>
-        <th>Fav Delivery</th>
-        <td>{{order.favoriteDelivery}} Lei</td>
-      </tr>
-      <tr>
-        <th>Subtotal</th>
-        <td>{{order.subtotal}} Lei</td>
-      </tr>      
-      <tr>
-        <th>Total Price</th>
-        <td>{{order.totalPrice}} Lei</td>
-      </tr>
-      <tr>
-        <th>User Id</th>
-        <td>{{order.userIdGet}}</td>
-      </tr>
-      <tr>
-        <th>Name</th>
-        <td>{{order.nameGet}}</td>
-      </tr>
-      <tr>
-        <th>Email</th>
-        <td>{{order.emailGet}}</td>
-      </tr>
-      <tr>
-        <th>Address</th>
-        <td>{{order.addressGet}}</td>
-      </tr>
-      <tr>
-        <th>Phone</th>
-        <td>{{order.phoneGet}}</td>
-      </tr>
-
       <tr *ngFor="let item of order.items">
         <td class="items"><strong>{{item.productName}}</strong></td>
         <td class="items">{{item.quantity}} buc</td>
+        <td class="items">{{item.price}} lei</td>
       </tr>
-      
+      <tr>
+        <th>Fav Delivery</th>
+        <td colspan="2">{{order.favoriteDelivery}} Lei</td>
+      </tr>
+      <tr>
+        <th>Subtotal</th>
+        <td colspan="2">{{order.subtotal}} Lei</td>
+      </tr>      
+      <tr>
+        <th>Total Price</th>
+        <td colspan="2">{{order.totalPrice}} Lei</td>
+      </tr>
+      <tr>
+        <th>User Id</th>
+        <td colspan="2">{{order.userIdGet}}</td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td colspan="2">{{order.nameGet}}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td colspan="2">{{order.emailGet}}</td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td colspan="2">{{order.addressGet}}</td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td colspan="2">{{order.phoneGet}}</td>
+      </tr>
       <tr>
         <th>Action</th>
-        <td>
+        <td colspan="2">
           <button mat-button class="btn-status" (click)="updateStatus(order)">{{order.status}}</button>
           <button mat-button class="btn-delete" (click)="deleteOrderDialog(order)">Delete</button>
         </td>

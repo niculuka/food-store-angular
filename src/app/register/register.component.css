@@ -20,6 +20,10 @@ form:hover {
   box-shadow: 0 18px 26px 0 rgba(0, 0, 0, 0.564);
 }
 
+mat-label {
+  color: rgb(74, 74, 74);
+}
+
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
   background-color: transparent;
 }
