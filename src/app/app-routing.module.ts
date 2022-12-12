@@ -23,6 +23,7 @@ import { AdminTokenComponent } from './admin-token/admin-token.component';
 const routes: Routes = [
   // home
   { path: "home", component: HomeComponent },
+  // { path: "**", component: HomeComponent },
   { path: "", redirectTo: "home", pathMatch: "full" },
 
   { path: "auth/register", component: RegisterComponent },
