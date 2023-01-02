@@ -1,26 +1,37 @@
 <div class="container">
-  <form #f="ngForm" (ngSubmit)="f.form.valid && login()">
 
-    
-    <mat-form-field appearance="fill">
-      <mat-label>Username</mat-label>
-      <input matInput class="test" type="text" name="username" [(ngModel)]="user.username" #username="ngModel" required>
-    </mat-form-field>
+  <div class="logo">
+    <img routerLink="/" src="assets/images/food-store-logo.png" alt="logo">
+  </div>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Password</mat-label>
-      <input matInput type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
-    </mat-form-field>
+  <div class="content">
 
+    <div class="header">
+      <h1>Salut!</h1>
+      <h3>Bine ai venit la Electro Room!</h3>
+    </div>
 
+    <form #f="ngForm" (ngSubmit)="login()">
 
-    <div class="alert" *ngIf="message">{{message}}</div>
+      <div class="input-container" [style]="emptyUsername" (keyup)="getUsername(username.value)">
+        <input type="text" name="username" [(ngModel)]="user.username" #username="ngModel" placeholder="utilizator">
+      </div>
 
+      <div class="input-container" [style]="emptyPassword" (keyup)="getPassword(password.value)">
+        <input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" placeholder="parola">
+      </div>
 
-    <button mat-button type="submit">LOGIN</button>
+      <div class="alert-container">
+        <div class="alert" *ngIf="message">{{message}}</div>
+      </div>
 
+      <button type="submit">LOGIN</button>
 
-    <a routerLink="/auth/register">Register here!</a>
+    </form>
 
-  </form>
+    <div class="footer">
+      <a routerLink="/auth/register">Inregistrare!</a>
+    </div>
+
+  </div>
 </div>
