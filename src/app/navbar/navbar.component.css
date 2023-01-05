@@ -1,0 +1,181 @@
+nav {
+  background: #333;
+  height: 49px;
+  margin: auto;
+  /* border: 2px solid black; */
+}
+
+.content {
+  margin: auto;
+  max-width: 1500px;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px solid rgb(254, 3, 3); */
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-size: 20px;
+  padding: 14px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a.active {
+  background: rgb(0, 152, 0);
+  color: white;
+}
+
+a:hover {
+  background: rgb(214, 213, 213);
+  color: #333;
+  cursor: pointer;
+}
+
+.cart a {
+  padding: 11px 30px;
+}
+
+mat-icon {
+  padding: 0 5px 0 0;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background: #333;
+  display: none;
+}
+
+.dropdown-menu a {
+  width: 120px;
+  border-bottom: 1px solid white;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown:hover::after .dropdown-menu {
+  display: none;
+}
+
+select {
+  width: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  background: transparent;
+}
+
+#check {
+  display: none;
+}
+
+.checkbtn {
+  display: none;
+  margin: 14px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 880px) {
+  a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 550px) {
+  nav {
+    flex-direction: row;
+    justify-content: flex-start;
+    background: none;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .burger {
+    height: 50px;
+    background: #333;
+  }
+
+  .checkbtn {
+    display: block;
+    float: right;
+  }
+
+  .menu {
+    width: 120px;
+    background: #333;
+    display: flex;
+    position: relative;
+    transition: .5s;
+    left: -100%;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  ul {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cart a {
+    padding: 12px;
+  }
+
+  .cart a mat-icon {
+    font-size: 20px;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
+  a {
+    width: 96px;
+    height: 20px;
+    font-size: 14px;
+    padding-left: 10px;
+    line-height: 20px;
+    border-bottom: 1px solid white;
+  }
+
+  a:first-child {
+    border-top: 1px solid white;
+    ;
+  }
+
+  .dropdown-menu a {
+    width: 80px;
+  }
+
+  #check:checked+.menu {
+    left: 0;
+  }
+}

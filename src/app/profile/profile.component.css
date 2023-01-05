@@ -1,0 +1,122 @@
+.container {
+  margin: 150px auto 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 70%;
+  outline: none;
+}
+
+input:focus {  
+  border: 2px solid rgb(2, 203, 253); 
+}
+
+.edit {
+  width: 400px;
+  text-align: left;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  margin: auto;
+  width: 400px;
+  max-width: 400px;
+}
+
+tr {
+  border-bottom: 1px solid grey;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 20px;
+  font-size: 22px;
+}
+
+thead th {
+  font-size: 36px;
+  text-align: left;
+  padding: 30px 30px 30px 20px;
+}
+
+a {
+  color: rgb(0, 166, 208); 
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-shadow: 1px 1px 2px rgb(2, 203, 253); 
+}
+
+form {
+  margin-top: 20px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid grey;
+}
+
+.alert {
+  margin-top: 10px;
+  color: rgb(255, 85, 0);
+}
+
+.alert-danger {
+  color: red;
+}
+
+button {
+  font-size: 16px;
+  font-weight: 600;
+  width: 76%;
+  margin: 14px 0;
+  padding: 10px;
+  border-radius: 4px;
+  background: rgb(2, 203, 253);
+  border: 2px solid grey;
+}
+
+button:hover {
+  cursor: pointer;
+  background: rgb(23, 240, 251);
+}
+
+
+@media (max-width: 550px) {
+  .container {
+    margin: 10px auto;
+  }
+
+  .edit {
+    width: 340px;
+  }
+
+  table {
+    width: 340px;
+    max-width: 340px;
+  }
+
+  td,
+  th {
+    font-size: 18px;
+    padding: 18px;
+  }
+
+  thead th {
+    font-size: 32px;
+  }
+
+  form {
+    width: 340px;
+  }
+}
