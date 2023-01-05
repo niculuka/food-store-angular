@@ -9,12 +9,12 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
-import { UserComponent } from './user/user.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AdminProductComponent } from './admin-product/admin-product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -52,11 +52,11 @@ import { OrderAgreementComponent } from './order-agreement/order-agreement.compo
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    HeaderComponent,
+    NavbarComponent,
     ProductComponent,
     CartComponent,
     CartItemComponent,
-    UserComponent,
+    ProfileComponent,
     AdminProductComponent,
     ProductDetailComponent,
     NotFoundComponent,

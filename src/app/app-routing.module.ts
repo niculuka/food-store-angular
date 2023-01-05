@@ -5,7 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
-import { UserComponent } from './user/user.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AdminProductComponent } from './admin-product/admin-product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { UnauthComponent } from './unauth/unauth.component';
@@ -46,7 +46,7 @@ const routes: Routes = [
   // current user
   { path: "cart", component: CartComponent },
   { path: "cart/order", component: OrderComponent, canActivate: [AuthGuard], data: { roles: [Role.ADMIN, Role.USER] } },
-  { path: "profile", component: UserComponent, canActivate: [AuthGuard], data: { roles: [Role.ADMIN, Role.USER] } },
+  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard], data: { roles: [Role.ADMIN, Role.USER] } },
   { path: "my-orders", component: MyOrderComponent, canActivate: [AuthGuard], data: { roles: [Role.ADMIN, Role.USER] } },
 
 
