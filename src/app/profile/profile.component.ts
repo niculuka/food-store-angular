@@ -21,9 +21,6 @@ export class ProfileComponent implements OnInit {
   repeatPassword: string = "";
 
   match: boolean = false;
-  password: boolean = false;
-  profile: boolean = false;
-  remove: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -48,39 +45,6 @@ export class ProfileComponent implements OnInit {
     return this.currentUser.newPassword !== this.repeatPassword;
   }
 
-  editPassword() {
-    this.password = !this.password;
-    this.profile = false;
-    this.remove = false;
-  }
-
-  editProfile() {
-    this.profile = !this.profile;
-    this.password = false;
-    this.remove = false;
-  }
-
-  removeAccount() {
-    this.remove = !this.remove;
-    this.profile = false;
-    this.password = false;
-  }
-
-  updatePassword() {
-    if (this.differentPassword() || this.confirmPassword()) return;
-    this.userService.updatePasswordService(this.currentUser).subscribe({
-      next: () => {
-        this.authService.logoutService();
-        this.router.navigate(['auth/login']);
-        this.toastrService.info("Password updated!");
-      },
-      error: err => {
-        this.toastrService.warning("Wrong password", "Password not updated!")
-        console.log(err);
-      }
-    })
-  }  
-
   updateProfile() {
     bcrypt.compare(this.currentUser.oldPassword, this.currentUser.password, (err: any, isMatch: any) => {
       if (err) { console.log(err); return; }
@@ -97,6 +61,21 @@ export class ProfileComponent implements OnInit {
           console.log(err);
         }
       })
+    })
+  }
+
+  updatePassword() {
+    if (this.differentPassword() || this.confirmPassword()) return;
+    this.userService.updatePasswordService(this.currentUser).subscribe({
+      next: () => {
+        this.authService.logoutService();
+        this.router.navigate(['auth/login']);
+        this.toastrService.info("Password updated!");
+      },
+      error: err => {
+        this.toastrService.warning("Wrong password", "Password not updated!")
+        console.log(err);
+      }
     })
   }
 

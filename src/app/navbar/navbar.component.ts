@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/service/cart.service';
 import { Role } from '../model/role.enum';
@@ -13,10 +13,13 @@ import { AuthService } from '../service/auth.service';
 export class NavbarComponent implements OnInit {
 
   currentUser: User = new User();
+  currentUserShow: string = "";
 
   cartQuantity = 0;
     
   show: boolean = false;
+
+  @ViewChild('txt') txt: ElementRef | undefined;
 
   constructor(
     private cartService: CartService,
@@ -30,10 +33,27 @@ export class NavbarComponent implements OnInit {
     this.authService.currentUser.subscribe(
       data => {
         this.currentUser = data;
+        if (this.currentUser) {
+          this.currentUserShow = this.currentUser.username.slice(0,15);
+        }
       });
   }
 
   ngOnInit(): void {
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickout(event: any) {
+    if (this.txt?.nativeElement.contains(event.target)) {
+      // console.log("INSIDE");
+    } else {
+      this.show = false;
+      // console.log("OUTSIDE");
+    }
+  }
+
+  closeMenu() {
+    this.show = false;
   }
 
   isAdmin() {

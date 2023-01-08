@@ -1,59 +1,128 @@
 .container {
-  margin: 150px auto 10px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  border-top: 2px solid white;  
+  background: #494949;
 }
 
-input {
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 70%;
-  outline: none;
-}
-
-input:focus {  
-  border: 2px solid rgb(2, 203, 253); 
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1500px;
+  height: 100vh;
+  /* border: 2px solid white; */
 }
 
 .edit {
-  width: 400px;
   text-align: left;
+  width: 30%;
+  height: 100vh;
+  padding: 34px;
+  border-right: 2px solid white;
 }
 
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  margin: auto;
-  width: 400px;
-  max-width: 400px;
-}
-
-tr {
-  border-bottom: 1px solid grey;
-}
-
-td,
-th {
-  text-align: left;
-  padding: 20px;
-  font-size: 22px;
-}
-
-thead th {
-  font-size: 36px;
-  text-align: left;
-  padding: 30px 30px 30px 20px;
-}
-
-a {
-  color: rgb(0, 166, 208); 
+.edit label {
+  font-size: 20px;
+  line-height: 30px;
+  /* color: rgb(0, 166, 208); */
   text-decoration: none;
   cursor: pointer;
 }
 
-a:hover {
-  text-shadow: 1px 1px 2px rgb(2, 203, 253); 
+/* .edit label:hover {
+  color: yellow;
+} */
+
+/* -------------------------------------------------- profile */
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%; 
+  padding: 34px;
+  /* border: 2px solid rgb(223, 193, 0); */
+}
+
+.view {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  width: 100%; 
+  /* border: 2px solid rgb(223, 193, 0); */
+}
+
+.view h1 {
+  font-size: 56px;
+  font-weight: 600;
+}
+
+.photo {
+  margin-top: 40px;
+  width: 100px;
+}
+
+.view h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.view h3 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.view h3 img{
+  width: 16px;
+}
+
+.role {
+  color: rgb(0, 166, 208);
+}
+
+.view p {
+  font-size: 20px;
+}
+
+.star {
+  width: 10px;
+}
+
+.view pre {
+  font-size: 16px;
+}
+
+.view hr {
+  color: white;
+}
+
+.long-line {
+  width: 80%;
+}
+
+.short-line {
+  width: 40%;
+}
+
+/* -------------------------------------------------- forms */
+.edit-profile {
+  display: none;
+}
+
+.edit-password {
+  display: none;
+}
+
+.delete-account {
+  display: none;
 }
 
 form {
@@ -63,16 +132,23 @@ form {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border: 1px solid grey;
+  border: 1px solid white;
+}
+
+form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 70%;
+  outline: none;
+}
+
+form input:focus {
+  border: 2px solid rgb(2, 203, 253);
 }
 
 .alert {
   margin-top: 10px;
-  color: rgb(255, 85, 0);
-}
-
-.alert-danger {
-  color: red;
+  color: white;
 }
 
 button {
@@ -83,12 +159,68 @@ button {
   padding: 10px;
   border-radius: 4px;
   background: rgb(2, 203, 253);
-  border: 2px solid grey;
+  border: none;
 }
 
 button:hover {
   cursor: pointer;
   background: rgb(23, 240, 251);
+}
+
+/* ------------------------------------------------ hide */
+#view-profile{
+  display: none;
+}
+
+#edit-profile {
+  display: none;
+}
+
+#edit-password {
+  display: none;
+}
+
+#delete-account {
+  display: none;
+}
+
+/* ------------------------------------------ labels colors  */
+.edit label {
+  color: rgb(0, 166, 208);
+}
+
+/* ------------------------------------------- active label  */
+#view-profile:checked ~ .edit > label:nth-of-type(1) {
+  color: yellow;
+}
+
+#edit-profile:checked ~ .edit > label:nth-of-type(2)  {
+  color: yellow;
+}
+
+#edit-password:checked ~ .edit > label:nth-of-type(3)  {
+  color: yellow;
+}
+
+#delete-account:checked ~ .edit > label:nth-of-type(4)  {
+  color: yellow;
+}
+
+/* ------------------------------------------------ display */
+#view-profile:checked ~ .profile > .view {
+  display: flex;
+}
+
+#edit-profile:checked ~ .profile > .edit-profile {
+  display: flex;
+}
+
+#edit-password:checked ~ .profile > .edit-password {
+  display: flex;
+}
+
+#delete-account:checked ~ .profile > .delete-account {
+  display: flex;
 }
 
 

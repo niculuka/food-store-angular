@@ -1,64 +1,117 @@
-<nav>
-  <div class="container">
-    <div class="content">
+<div class="container">
+  <div class="content">
 
+    <!-- column ---------------------------------------------------------------- -->
 
-      <div class="burger">
-        <label for="check" class="checkbtn">
-          <mat-icon>{{show ? "close": "menu" }}</mat-icon>
-        </label>
-      </div>
+    <div class="row">
+      <ul>
+        <li>
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+
+        <li>
+          <a routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+
+        <li class="dropdown" *ngIf="isAdmin()">
+          <a class="btn-dropdown">
+            <span>Admin</span>
+            <img src="assets/svgs/chevron-down.svg" alt="chevron-down">
+          </a>
+          <div class="dropdown-menu left">
+            <a routerLink="/admin/products" routerLinkActive="active">Products</a>
+            <a routerLink="/admin/orders" routerLinkActive="active">Orders</a>
+            <a routerLink="/admin/items" routerLinkActive="active">Items</a>
+            <a routerLink="/admin/users" routerLinkActive="active">Users</a>
+            <a routerLink="/admin/tokens" routerLinkActive="active">Tokens</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul>
+
+        <li *ngIf="!currentUser?.userId">
+          <a routerLink="/auth/login" routerLinkActive="active">Login</a>
+        </li>
+
+        <li class="dropdown" *ngIf="currentUser?.userId">
+          <a>
+            <span>{{currentUserShow}}</span>
+            <img src="assets/svgs/chevron-down.svg" alt="chevron-down">
+          </a>
+          <div class="dropdown-menu right">
+            <a routerLink="/profile" routerLinkActive="active">Profile</a>
+            <a routerLink="/my-orders" routerLinkActive="active">My Orders</a>
+            <a routerLink="/" (click)="logout()">Logout</a>
+          </div>
+        </li>
+
+        <li class="cart">
+          <a routerLink="/cart" routerLinkActive="active">
+            <mat-icon matBadge="{{cartQuantity}}" matBadgeColor="warn">shopping_cart</mat-icon>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- column ---------------------------------------------------------------- -->
+
+    <div #txt class="burger">
+
+      <label class="checkbtn" for="check">
+        <mat-icon class="burger-icon">{{show ? "close": "menu" }}</mat-icon>
+      </label>
 
       <input type="checkbox" id="check" [(ngModel)]="show">
-      <div class="menu">
-        <div class="column">
 
-          <ul>
-            <li>
-              <a routerLink="/home" routerLinkActive="active">Home</a>
-            </li>
-            <li>
-              <a routerLink="/products" routerLinkActive="active">Products</a>
-            </li>
+      <div class="column">
+        <ul>
+          <li>
+            <a routerLink="/home" routerLinkActive="active">Home</a>
+          </li>
 
-            <li class="dropdown" *ngIf="isAdmin()">
-              <a class="btn-dropdown">Admin
-                <select></select>
-              </a>
-              <div class="dropdown-menu">
-                <a routerLink="/admin/products" routerLinkActive="active">Products</a>
-                <a routerLink="/admin/orders" routerLinkActive="active">Orders</a>
-                <a routerLink="/admin/items" routerLinkActive="active">Items</a>
-                <a routerLink="/admin/users" routerLinkActive="active">Users</a>
-                <a routerLink="/admin/tokens" routerLinkActive="active">Tokens</a>
-              </div>
-            </li>
-          </ul>
+          <li>
+            <a routerLink="/products" routerLinkActive="active">Products</a>
+          </li>
 
-          <ul>
-            <li *ngIf="!currentUser?.userId">
-              <a routerLink="/auth/login" routerLinkActive="active">Login</a>
-            </li>
-            <li class="dropdown" *ngIf="currentUser?.userId">
-              <a>{{currentUser.username}}
-                <select></select>
-              </a>
-              <div class="dropdown-menu">
-                <a routerLink="/profile" routerLinkActive="active">Profile</a>
-                <a routerLink="/my-orders" routerLinkActive="active">My Orders</a>
-                <a routerLink="/" (click)="logout()">Logout</a>
-              </div>
-            </li>
-            <li class="cart">
-              <a routerLink="/cart" routerLinkActive="active">
-                <mat-icon matBadge="{{cartQuantity}}" matBadgeColor="warn">shopping_cart</mat-icon>
-              </a>
-            </li>
-          </ul>
-        </div>
+          <li class="dropdown" *ngIf="isAdmin()">
+            <a class="btn-dropdown">
+              <span>Admin</span>
+              <img src="assets/svgs/chevron-down.svg" alt="chevron-down">
+            </a>
+            <div class="dropdown-menu">
+              <a routerLink="/admin/products" routerLinkActive="active">Products</a>
+              <a routerLink="/admin/orders" routerLinkActive="active">Orders</a>
+              <a routerLink="/admin/items" routerLinkActive="active">Items</a>
+              <a routerLink="/admin/users" routerLinkActive="active">Users</a>
+              <a routerLink="/admin/tokens" routerLinkActive="active">Tokens</a>
+            </div>
+          </li>
+
+          <li *ngIf="!currentUser?.userId">
+            <a routerLink="/auth/login" routerLinkActive="active">Login</a>
+          </li>
+
+          <li class="dropdown" *ngIf="currentUser?.userId">
+            <a>
+              <span>{{currentUserShow}}</span>
+              <img src="assets/svgs/chevron-down.svg" alt="chevron-down">
+            </a>
+            <div class="dropdown-menu">
+              <a routerLink="/profile" routerLinkActive="active">Profile</a>
+              <a routerLink="/my-orders" routerLinkActive="active">My Orders</a>
+              <a routerLink="/" (click)="logout()">Logout</a>
+            </div>
+          </li>
+
+          <li class="cart">
+            <a routerLink="/cart" routerLinkActive="active">
+              <mat-icon matBadge="{{cartQuantity}}" matBadgeColor="warn">shopping_cart</mat-icon>
+            </a>
+          </li>
+        </ul>
       </div>
-
-
     </div>
+
   </div>
-</nav>
+</div>

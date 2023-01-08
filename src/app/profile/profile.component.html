@@ -1,132 +1,134 @@
 <app-navbar></app-navbar>
 
 <div class="container">
+  <div class="content">
 
-  <!-- EDIT PROFILE ==================================================================================================== -->
-  <div class="edit">
-    <a (click)="editPassword()">Edit Password</a><br>
-    <a (click)="editProfile()">Edit Profile</a><br>
-    <a (click)="removeAccount()">Delete account</a>
+    <input type="radio" id="view-profile" name="in" checked><br>
+    <input type="radio" id="edit-profile" name="in"><br>
+    <input type="radio" id="edit-password" name="in"><br>
+    <input type="radio" id="delete-account" name="in">
+
+
+    <!-- MENU ================================================================================================== -->
+    <div class="edit">
+      <label for="view-profile">View Profile</label><br>
+      <label for="edit-profile">Edit Profile</label><br>
+      <label for="edit-password">Edit Password</label><br>
+      <label for="delete-account">Delete account</label>
+    </div>
+
+
+    <!-- VIEW PROFILE ============================================================================================ -->
+    <div class="profile">
+
+      <div class="view">
+
+        <h1>PROFILE</h1>
+
+        <img class="photo" src="assets/logo/profile-white.png" alt="profile-white.png">
+
+        <h2>{{currentUser.name}}</h2>
+        <p>{{currentUser.address}}</p>
+
+        <hr class="long-line">
+
+        <h3><strong>email:</strong> &nbsp; {{currentUser.email}}</h3>
+        <h3><strong>phone:</strong> &nbsp; {{currentUser.phone}}</h3>
+
+        <hr class="short-line">
+
+        <h3><strong>username:</strong> &nbsp; {{currentUser.username}}</h3>
+        <h3><strong>password:</strong> &nbsp;
+          <img class="star" src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
+          <img class="star" src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
+          <img class="star" src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
+          <img class="star" src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
+        </h3>
+
+        <hr class="short-line">
+
+        <h2 class="role">{{currentUser.role}}</h2>
+
+      </div>
+
+
+      <!-- EDIT-PROFILE ====================================================================================================== -->
+      <div class="edit-profile">
+        <form #f="ngForm" (ngSubmit)="f.form.valid && updateProfile()">
+
+          <h2>Edit profile</h2>
+
+          <input type="text" placeholder="Name" id="name" name="name" [(ngModel)]="currentUser.name" #name="ngModel"
+            minlength="4" maxlength="30" required>
+          <div class="alert" *ngIf="!name.valid && f.submitted">Insert min 4, max 30 chars!</div>
+
+          <input type="email" placeholder="Email" id="email" name="email" [(ngModel)]="currentUser.email"
+            #email="ngModel" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
+          <div class="alert" *ngIf="!email.valid && f.submitted">Insert a valid email!</div>
+
+          <input type="text" placeholder="Phone" id="phone" name="phone" [(ngModel)]="currentUser.phone"
+            #phone="ngModel" minlength="10" maxlength="13" pattern="^[0-9]*$" required>
+          <div class="alert" *ngIf="!phone.valid && f.submitted">Insert min 10, max 13 numbers!</div>
+
+          <input id="address" placeholder="Address" name="address" cols="30" rows="3" [(ngModel)]="currentUser.address"
+            #address="ngModel" minlength="10" maxlength="100" required>
+          <div class="alert" *ngIf="!address.valid && f.submitted">Min 10 chars, max 100 chars!</div>
+
+          <input type="password" placeholder="Password" name="oldPassword" [(ngModel)]="currentUser.oldPassword"
+            minlength="4" maxlength="30" #oldpassword="ngModel" required>
+          <div class="alert" *ngIf="!oldpassword.valid && f.submitted">Insert min 4, max 30 chars!</div>
+          <div class="alert" *ngIf="match && f.submitted">Wrong password!</div>
+
+          <button type="submit">UPDATE</button>
+
+        </form>
+      </div>
+
+
+      <!-- PASSWORD ======================================================================================================== -->
+      <div class="edit-password">
+        <form #p="ngForm" (ngSubmit)="p.form.valid && updatePassword()">
+          <h2>Edit password</h2>
+
+          <input type="password" placeholder="Password" name="oldPassword" [(ngModel)]="currentUser.oldPassword"
+            minlength="4" maxlength="30" #oldpassword="ngModel" required>
+          <div class="alert" *ngIf="!oldpassword.valid && p.submitted">Insert min 4, max 30 chars!</div>
+
+          <input type="password" placeholder="New Password" name="newpassword" [(ngModel)]="currentUser.newPassword"
+            minlength="4" maxlength="30" #newpassword="ngModel" required>
+          <div class="alert" *ngIf="!newpassword.valid && p.submitted">Insert min 4, max 30 chars!</div>
+          <div class="alert" *ngIf="differentPassword() && p.submitted">Password must be different!</div>
+
+          <input type="password" placeholder="New Password" name="repeatPassword" [(ngModel)]="repeatPassword"
+            minlength="4" maxlength="30" #repeatpassword="ngModel" required>
+          <div class="alert" *ngIf="!repeatpassword.valid && p.submitted">Insert min 4, max 30 chars!</div>
+          <div class="alert" *ngIf="confirmPassword() && p.submitted">Wrong password confirmation!</div>
+
+          <button type="submit">CHANGE</button>
+
+        </form>
+      </div>
+
+
+      <!-- DELETE ========================================================================================================== -->
+      <div class="delete-account">
+        <form #d="ngForm" (ngSubmit)="d.form.valid && deleteAccount(currentUser)">
+
+          <h2>Delete your account:</h2>
+          <h1>{{currentUser.username}} ?</h1>
+
+          <input type="password" placeholder="Password" name="oldPassword" [(ngModel)]="currentUser.oldPassword"
+            minlength="4" maxlength="30" #oldpassword="ngModel" required>
+          <div class="alert" *ngIf="!oldpassword.valid && d.submitted">Insert min 4, max 30 chars!</div>
+          <div class="alert" *ngIf="match && d.submitted">Wrong password!</div>
+
+          <button type="submit">DELETE</button>
+
+        </form>
+      </div>
+
+    </div>
+
+
   </div>
-
-
-  <!-- PASSWORD ======================================================================================================== -->
-  <form #p="ngForm" *ngIf="password" (ngSubmit)="p.form.valid && updatePassword()">
-    <h2>Edit password</h2>
-
-    <input type="password" placeholder="Password" name="oldPassword" [(ngModel)]="currentUser.oldPassword" minlength="4"
-      maxlength="30" #oldpassword="ngModel" required>
-    <div class="alert-danger" *ngIf="!oldpassword.valid && p.submitted">Insert min 4, max 30 chars!</div>
-
-    <input type="password" placeholder="New Password" name="newpassword" [(ngModel)]="currentUser.newPassword"
-      minlength="4" maxlength="30" #newpassword="ngModel" required>
-    <div class="alert-danger" *ngIf="!newpassword.valid && p.submitted">Insert min 4, max 30 chars!</div>
-    <div class="alert-danger" *ngIf="differentPassword() && p.submitted">Password must be different!</div>
-
-    <input type="password" placeholder="New Password" name="repeatPassword" [(ngModel)]="repeatPassword" minlength="4"
-      maxlength="30" #repeatpassword="ngModel" required>
-    <div class="alert-danger" *ngIf="!repeatpassword.valid && p.submitted">Insert min 4, max 30 chars!</div>
-    <div class="alert-danger" *ngIf="confirmPassword() && p.submitted">Wrong password confirmation!</div>
-
-    <button type="submit">CHANGE</button>
-
-  </form>
-
-
-  <!-- PROFILE ========================================================================================================== -->
-  <form #f="ngForm" *ngIf="profile" (ngSubmit)="f.form.valid && updateProfile()">
-
-    <h2>Edit profile</h2>
-
-    <input type="text" placeholder="Name" id="name" name="name" [(ngModel)]="currentUser.name" #name="ngModel"
-      minlength="4" maxlength="30" required>
-    <div class="alert-danger" *ngIf="!name.valid && f.submitted">Insert min 4, max 30 chars!</div>
-
-    <input type="email" placeholder="Email" id="email" name="email" [(ngModel)]="currentUser.email" #email="ngModel"
-      pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
-    <div class="alert-danger" *ngIf="!email.valid && f.submitted">Insert a valid email!</div>
-
-    <input type="text" placeholder="Phone" id="phone" name="phone" [(ngModel)]="currentUser.phone" #phone="ngModel"
-      minlength="10" maxlength="13" pattern="^[0-9]*$" required>
-    <div class="alert-danger" *ngIf="!phone.valid && f.submitted">Insert min 10, max 13 numbers!</div>
-
-    <input id="address" placeholder="Address" name="address" cols="30" rows="3" [(ngModel)]="currentUser.address"
-      #address="ngModel" minlength="10" maxlength="100" required>
-    <div class="alert-danger" *ngIf="!address.valid && f.submitted">Min 10 chars, max 100 chars!</div>
-
-    <input type="password" placeholder="Password" name="oldPassword" [(ngModel)]="currentUser.oldPassword" minlength="4"
-      maxlength="30" #oldpassword="ngModel" required>
-    <div class="alert-danger" *ngIf="!oldpassword.valid && f.submitted">Insert min 4, max 30 chars!</div>
-    <div class="alert-danger" *ngIf="match && f.submitted">Wrong password!</div>
-
-    <button type="submit">UPDATE</button>
-
-  </form>
-
-
-  <!-- DELETE ========================================================================================================== -->
-  <form #d="ngForm" *ngIf="remove" (ngSubmit)="d.form.valid && deleteAccount(currentUser)">
-
-    <h2>Delete your account:</h2>
-    <h1>{{currentUser.username}} ?</h1>
-
-    <input type="password" placeholder="Password" name="oldPassword" [(ngModel)]="currentUser.oldPassword" minlength="4"
-      maxlength="30" #oldpassword="ngModel" required>
-    <div class="alert-danger" *ngIf="!oldpassword.valid && d.submitted">Insert min 4, max 30 chars!</div>
-    <div class="alert-danger" *ngIf="match && d.submitted">Wrong password!</div>
-
-    <button type="submit">DELETE</button>
-
-  </form>
-
-
-  <!-- PROFILE =============================================================================================== -->
-  <div>    
-    
-    <table>
-
-      <thead>
-        <tr>
-          <th colspan="2">Profile:</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td class="left" style="width: 10%;"><strong>Username</strong></td>
-          <td>{{currentUser.username}}</td>
-        </tr>
-        <tr>
-          <td class="left"><strong>Password</strong></td>
-          <td><strong>********</strong></td>
-        </tr>
-        <tr>
-          <td class="left"><strong>Name</strong></td>
-          <td>{{currentUser.name}}</td>
-        </tr>
-        <tr>
-          <td class="left"><strong>Email</strong></td>
-          <td>{{currentUser.email}}</td>
-        </tr>
-        <tr>
-          <td class="left"><strong>Phone</strong></td>
-          <td>{{currentUser.phone}}</td>
-        </tr>
-        <tr>
-          <td class="left"><strong>Address</strong></td>
-          <td>{{currentUser.address}}</td>
-        </tr>
-        <tr>
-          <td class="left"><strong>Role</strong></td>
-          <td>{{currentUser.role}}</td>
-        </tr>
-      </tbody>
-
-    </table>
-
-
-    
-  </div> 
-
-
 </div>
