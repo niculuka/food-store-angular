@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
       data => {
         this.currentUser = data;
         if (this.currentUser) {
-          this.currentUserShow = this.currentUser.username.slice(0,15);
+          this.currentUserShow = this.currentUser.username.slice(0,10);
         }
       });
   }
@@ -45,10 +45,10 @@ export class NavbarComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   clickout(event: any) {
     if (this.txt?.nativeElement.contains(event.target)) {
-      // console.log("INSIDE");
+      console.log("INSIDE");
     } else {
       this.show = false;
-      // console.log("OUTSIDE");
+      console.log("OUTSIDE");
     }
   }
 

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  border-top: 2px solid white;  
+  border-top: 2px solid white;
   background: #494949;
 }
 
@@ -22,31 +22,29 @@
   text-align: left;
   width: 30%;
   height: 100vh;
-  padding: 34px;
+  padding: 34px 0 0 34px;
   border-right: 2px solid white;
+  /* border: 2px solid rgb(223, 193, 0); */
 }
 
 .edit label {
   font-size: 20px;
   line-height: 30px;
-  /* color: rgb(0, 166, 208); */
+  color: rgb(0, 166, 208);
   text-decoration: none;
   cursor: pointer;
+  /* border: 2px solid rgb(223, 115, 0); */
 }
 
-/* .edit label:hover {
-  color: yellow;
-} */
-
-/* -------------------------------------------------- profile */
+/* ---------------------------------------------- edit profile */
 .profile {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  width: 100%; 
-  padding: 34px;
+  width: 100%;
+  padding: 40px 10px 10px 10px;
   /* border: 2px solid rgb(223, 193, 0); */
 }
 
@@ -54,12 +52,15 @@
   display: none;
   flex-direction: column;
   justify-content: center;
-  align-items: center;  
-  width: 100%; 
-  /* border: 2px solid rgb(223, 193, 0); */
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 4px;
+  /* border: 2px solid rgb(70, 200, 0); */
 }
 
 .view h1 {
+  display: block;
   font-size: 56px;
   font-weight: 600;
 }
@@ -73,14 +74,22 @@
   font-size: 40px;
   font-weight: 600;
   margin-top: 20px;
+  text-align: center;
+}
+
+.view p {
+  font-size: 20px;
+  text-align: center;
 }
 
 .view h3 {
   font-size: 24px;
-  margin-top: 20px;
+  line-height: 30px;
+  margin: 4px 0;
+  text-align: center;
 }
 
-.view h3 img{
+.view h3 img {
   width: 16px;
 }
 
@@ -88,20 +97,9 @@
   color: rgb(0, 166, 208);
 }
 
-.view p {
-  font-size: 20px;
-}
-
-.star {
-  width: 10px;
-}
-
-.view pre {
-  font-size: 16px;
-}
-
 .view hr {
   color: white;
+  margin: 20px 0;
 }
 
 .long-line {
@@ -113,6 +111,68 @@
 }
 
 /* -------------------------------------------------- forms */
+form {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
+}
+
+form h2 {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 20px 0;
+  /* border: 1px solid rgb(255, 0, 0); */
+}
+
+form h3 {
+  font-size: 30px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+form input {
+  display: block;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 14px;
+  width: 80%;
+  outline: none;
+  /* border: 1px solid rgb(255, 0, 0); */
+}
+
+form input:focus {
+  border: 2px solid rgb(0, 166, 208);
+}
+
+.alert {
+  font-size: 14px;
+  margin-top: 6px;
+  color: rgb(255, 68, 68);
+  /* border: 1px solid rgb(255, 0, 0); */
+}
+
+button {
+  font-size: 16px;
+  font-weight: 600;
+  width: 80%;
+  margin: 20px 0;
+  padding: 14px;
+  border-radius: 4px;
+  color: white;
+  background: rgb(0, 166, 208);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  color: black;
+  background: rgb(2, 203, 253);
+}
+
 .edit-profile {
   display: none;
 }
@@ -125,130 +185,224 @@
   display: none;
 }
 
-form {
-  margin-top: 20px;
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid white;
-}
-
-form input {
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 70%;
-  outline: none;
-}
-
-form input:focus {
-  border: 2px solid rgb(2, 203, 253);
-}
-
-.alert {
-  margin-top: 10px;
-  color: white;
-}
-
-button {
-  font-size: 16px;
-  font-weight: 600;
-  width: 76%;
-  margin: 14px 0;
-  padding: 10px;
-  border-radius: 4px;
-  background: rgb(2, 203, 253);
-  border: none;
-}
-
-button:hover {
-  cursor: pointer;
-  background: rgb(23, 240, 251);
-}
-
-/* ------------------------------------------------ hide */
-#view-profile{
-  display: none;
-}
-
-#edit-profile {
-  display: none;
-}
-
-#edit-password {
-  display: none;
-}
-
+#view-profile,
+#edit-profile,
+#edit-password,
 #delete-account {
   display: none;
 }
 
-/* ------------------------------------------ labels colors  */
-.edit label {
-  color: rgb(0, 166, 208);
-}
-
 /* ------------------------------------------- active label  */
-#view-profile:checked ~ .edit > label:nth-of-type(1) {
+#view-profile:checked~.edit>label:nth-of-type(1) {
   color: yellow;
 }
 
-#edit-profile:checked ~ .edit > label:nth-of-type(2)  {
+#edit-profile:checked~.edit>label:nth-of-type(2) {
   color: yellow;
 }
 
-#edit-password:checked ~ .edit > label:nth-of-type(3)  {
+#edit-password:checked~.edit>label:nth-of-type(3) {
   color: yellow;
 }
 
-#delete-account:checked ~ .edit > label:nth-of-type(4)  {
+#delete-account:checked~.edit>label:nth-of-type(4) {
   color: yellow;
 }
 
 /* ------------------------------------------------ display */
-#view-profile:checked ~ .profile > .view {
+#view-profile:checked~.profile>.view {
   display: flex;
 }
 
-#edit-profile:checked ~ .profile > .edit-profile {
+#edit-profile:checked~.profile>.edit-profile {
   display: flex;
 }
 
-#edit-password:checked ~ .profile > .edit-password {
+#edit-password:checked~.profile>.edit-password {
   display: flex;
 }
 
-#delete-account:checked ~ .profile > .delete-account {
+#delete-account:checked~.profile>.delete-account {
   display: flex;
 }
 
+@media (max-width: 880px) {
+  .edit {
+    padding: 34px 0 0 34px;
+  }
+
+  .edit label {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* ---------------------------------------------- edit profile */
+  .profile {
+    padding-top: 36px;
+  }
+
+  .view {
+    padding-top: 0;
+  }
+
+  .view h1 {
+    font-size: 46px;
+  }
+
+  .photo {
+    margin-top: 24px;
+    width: 80px;
+  }
+
+  .view h2 {
+    font-size: 30px;
+  }
+
+  .view p {
+    font-size: 16px;
+  }
+
+  .view h3 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .view h3 img {
+    width: 12px;
+  }
+
+  .view hr {
+    color: white;
+    margin: 14px 0;
+  }
+
+  .long-line {
+    width: 90%;
+  }
+
+  .short-line {
+    width: 60%;
+  }
+
+  /* -------------------------------------------------- forms */
+  form {
+    width: 360px;
+  }
+
+  form h2 {
+    font-size: 28px;
+    line-height: 28px;
+    margin: 18px 0;
+  }
+
+  form h3 {
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 18px;
+  }
+
+  form input {
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 14px;
+  }
+
+  .alert {
+    font-size: 13px;
+    margin-top: 0;
+  }
+}
 
 @media (max-width: 550px) {
-  .container {
-    margin: 10px auto;
+  .content {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .edit {
-    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid white;
   }
 
-  table {
-    width: 340px;
-    max-width: 340px;
+  .edit label {
+    font-size: 16px;
+    line-height: 24px;   
+    width: 90px;
   }
 
-  td,
-  th {
-    font-size: 18px;
-    padding: 18px;
+  .profile {
+    width: 100%;
   }
 
-  thead th {
-    font-size: 32px;
+  /* ---------------------------------------------- edit profile */
+  .view {    
+    padding: 0 10px;
   }
 
+  .view h1 {
+    font-size: 36px;
+  }
+
+  .photo {
+    margin-top: 10px;
+    width: 70px;
+  }
+
+  .view h2 {
+    font-size: 22px;
+    margin-top: 14px;
+  }
+
+  .view p {
+    font-size: 14px;
+  }
+
+  .view h3 {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .view h3 img {
+    width: 10px;
+  }
+
+  /* -------------------------------------------------- forms */
   form {
-    width: 340px;
+    width: 280px;
+  }
+
+  form h2 {
+    font-size: 24px;
+    line-height: 24px;
+    margin: 16px 0;
+  }
+
+  form h3 {
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+
+  form input {
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+  .alert {
+    font-size: 12px;    
+  }
+
+  button {
+    font-size: 14px;
+    margin: 18px 0;
+    padding: 10px;
   }
 }

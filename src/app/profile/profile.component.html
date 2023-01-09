@@ -13,8 +13,8 @@
     <div class="edit">
       <label for="view-profile">View Profile</label><br>
       <label for="edit-profile">Edit Profile</label><br>
-      <label for="edit-password">Edit Password</label><br>
-      <label for="delete-account">Delete account</label>
+      <label for="edit-password">Password</label><br>
+      <label for="delete-account">Account</label>
     </div>
 
 
@@ -39,10 +39,10 @@
 
         <h3><strong>username:</strong> &nbsp; {{currentUser.username}}</h3>
         <h3><strong>password:</strong> &nbsp;
-          <img class="star" src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
-          <img class="star" src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
-          <img class="star" src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
-          <img class="star" src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
+          <img src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
+          <img src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
+          <img src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
+          <img src="assets/svgs/star-fill-white.svg" alt="star-fill-white.svg">
         </h3>
 
         <hr class="short-line">
@@ -115,7 +115,7 @@
         <form #d="ngForm" (ngSubmit)="d.form.valid && deleteAccount(currentUser)">
 
           <h2>Delete your account:</h2>
-          <h1>{{currentUser.username}} ?</h1>
+          <h3>{{currentUser.username}} ?</h3>
 
           <input type="password" placeholder="Password" name="oldPassword" [(ngModel)]="currentUser.oldPassword"
             minlength="4" maxlength="30" #oldpassword="ngModel" required>

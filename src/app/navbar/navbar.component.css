@@ -140,10 +140,11 @@
 /* -------------------------------------------- column */
 
 .column {
-  display: none;
   position: absolute;
+  display: none;
   top: 50px;
   left: 0;
+  /* border: 2px solid rgb(3, 112, 254); */
 }
 
 .column ul {
@@ -152,9 +153,7 @@
   justify-content: center;
   list-style-type: none;
   position: relative;
-  transition: .5s;
-  /* left: 0; */
-  left: -110%;
+  left: 0;
   margin: 0;
   padding: 0;  
   background: #353535;
@@ -207,14 +206,10 @@
 
   .checkbtn {
     display: flex;    
-  }
+  }  
 
   .row {
     display: none;
-  }
-
-  .column {
-    display: flex;
   }
 
   .dropdown:hover .dropdown-menu {
@@ -228,8 +223,8 @@
     padding: 14px;
   }
 
-  #check:checked+.column ul {
-    left: 0;
+  #check:checked+.column {
+    display: flex;
   }
 }
 
