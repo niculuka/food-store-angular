@@ -1,0 +1,13 @@
+<footer>
+    <div class="content">
+        <div class="title" *ngFor="let title of titles">
+            <h3>{{title.name}}</h3>
+            <div class="line"></div>
+            <div class="subtitle" *ngFor="let subtitle of title.subtitles">
+                <li>
+                    <a (click)="noRoute()">{{subtitle.name}}</a>
+                </li>
+            </div>
+        </div>
+    </div>
+</footer>

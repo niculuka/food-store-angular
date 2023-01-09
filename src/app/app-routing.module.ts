@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
-import { ProductComponent } from './product/product.component';
-import { CartComponent } from './cart/cart.component';
-import { ProfileComponent } from './profile/profile.component';
-import { AdminProductComponent } from './admin-product/admin-product.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { UnauthComponent } from './unauth/unauth.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthGuard } from './guard/auth.guard';
-import { Role } from './model/role.enum';
-import { OrderComponent } from './order/order.component';
-import { AdminUserComponent } from './admin-user/admin-user.component';
-import { ProductCategoryComponent } from './product-category/product-category.component';
-import { MyOrderComponent } from './my-order/my-order.component';
-import { AdminOrderComponent } from './admin-order/admin-order.component';
-import { AdminItemComponent } from './admin-item/admin-item.component';
-import { AdminTokenComponent } from './admin-token/admin-token.component';
+import { CartComponent } from './user/cart/cart.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { AdminProductComponent } from './admin/admin-product/admin-product.component';
+import { ProductDetailComponent } from './products-pages/product-detail/product-detail.component';
+import { UnauthComponent } from './guest/unauth/unauth.component';
+import { NotFoundComponent } from './guest/not-found/not-found.component';
+import { AuthGuard } from './shared/guard/auth.guard';
+import { Role } from './shared/enums/food.enum';
+import { OrderComponent } from './user/order/order.component';
+import { AdminUserComponent } from './admin/admin-user/admin-user.component';
+import { MyOrderComponent } from './user/my-order/my-order.component';
+import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
+import { AdminItemComponent } from './admin/admin-item/admin-item.component';
+import { AdminTokenComponent } from './admin/admin-token/admin-token.component';
+import { HomeComponent } from './guest/home/home.component';
+import { RegisterComponent } from './guest/register/register.component';
+import { LoginComponent } from './guest/login/login.component';
+import { ProductCategoryComponent } from './products-pages/product-category/product-category.component';
+import { ProductComponent } from './products-pages/product/product.component';
 
 const routes: Routes = [
   // home
